@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#app {
+  background-color: red;
+  display: grid;
+  grid-template-columns: 380px auto;
+
+  nav {
+    background-color: #f4f4f4;
+    display: flex;;
+    flex-direction: column;
+    padding: 10px;
+
+    .town-logo {
+      margin: 25px auto;
+      width: 128px;
+    }
+
+    input {
+      height: 40px;
+      padding: 0 10px 0 20px;
+      border-radius: 25px;
+      border: 0;
+      outline: none;
+      background-color: #fafafa;
+
+      &::placeholder {
+        color: #a9a9a9;
+        font: 400 14px "Poppins";
+      }
+    }
+
+    .category-tags__container {
+      display: flex;
+      gap: 10px;
+      margin: 20px 0;
+      flex-wrap: wrap;
+
+      .tag__container {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        padding: 7px 15px;
+        border-radius: 25px;
+        background-color: #fafafa;
+        border: 0;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #e2e2e2;
+        }
+
+        span {
+          color: #333333;
+          font: 400 12px "Poppins";
+        }
+
+        .tag__icon {
+          width: 32px;
+        }
+      }
+    }
+
+    .items-category__container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      color: #333333;
+
+      h2 {
+        font: 500 21px "Poppins";
+        margin-bottom: 10px;
+
+      }
+
+      .cat-item__container {
+        display: flex;
+        align-items: center;
+        border-radius: 5px;
+        background-color: #e2e2e2;
+        cursor: pointer;
+        margin-left: 10px;
+        padding: 10px 10px;
+        position: relative;
+        z-index: 0;
+        overflow: hidden;
+        transition: color .2s .1s;
+
+        &:after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 0;
+          height: 100%;
+          background: linear-gradient(45deg, #E24534, #ED6846);
+          transition: width .45s;
+          z-index: -1;
+
+        }
+
+        &:hover {
+          color: #fafafa;
+
+          &:after {
+            width: 100%;
+          }
+        }
+
+        .building__icon {
+          height: 32px;
+          margin-right: 10px;
+        }
+
+        button {
+          margin-left: auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 18px;
+          height: 18px;
+          border: 0;
+          border-radius: 3px;
+        }
+
+        h3 {
+          font: 500 18px "Poppins";
+          line-height: 110%;
+        }
+
+        p {
+          line-height: 110%;
+          font: 400 14px "Poppins";
+        }
+      }
+    }
+  }
+}
