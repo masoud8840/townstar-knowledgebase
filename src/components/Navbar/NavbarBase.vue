@@ -1,13 +1,13 @@
 <template>
   <nav>
     <img src="/images/Navbar/TownStarLogo.svg" alt="townstar-logo" class="town-logo">
-    <input type="text" id="search" :placeholder="`What${currentTag ? ' ' + currentTag : '' } you are looking for?`">
+    <input type="text" id="search" :placeholder="`What${currentTag ? ' ' + currentTag : '' } you are looking for?`"
+           v-model="searchedText"
+           @input="onSearchCrafts">
     <div class="category-tags__container">
       <category-tag v-for="(tag,index) in categories" :key="index" :name="tag.name" :img-src="tag.imgSrc"
                     @click="onTagChange(tag.name)" :class="{active: currentTag === tag.name}"></category-tag>
     </div>
-
-
     <div class="items-category__container"
          v-for="(cat,index) in filteredCrafts" :key="index">
       <h2>{{ cat.title }}:</h2>
@@ -31,36 +31,11 @@ const onTagChange = (name) => {
   }
 }
 // Search functionality
+const searchedText = ref("");
+const onSearchCrafts = () => {
 
+}
 
-
-const filteredCrafts = computed(() => {
-  if (currentTag.value !== '') return crafts.value.filter(a => a.title === currentTag.value)
-  else return crafts.value
-})
-
-const categories = ref([
-  {
-    name: "farm",
-    imgSrc: 'Terrain/icon_pond.png',
-  },
-  {
-    name: "ranch",
-    imgSrc: 'Terrain/icon_meadow.png',
-  },
-  {
-    name: "terrain",
-    imgSrc: 'Terrain/icon_dirtRoad.png',
-  },
-  {
-    name: "industrial",
-    imgSrc: 'Terrain/icon_pavedRoad.png',
-  },
-  {
-    name: "trade",
-    imgSrc: 'Trade/icon_tradeDepot.png',
-  }
-])
 const crafts = ref([
   {
     title: "farm",
@@ -226,6 +201,37 @@ const crafts = ref([
         ]
       }
     ]
+  }
+])
+
+
+const filteredCrafts = computed(() => {
+  let craftsList = [...crafts.value];
+  if(currentTag.value !== '') craftsList = crafts.value.filter(a=> a.title === currentTag.value)
+  // if(searchedText.value !== '') craftsList.map(craft => )
+  return craftsList
+})
+
+const categories = ref([
+  {
+    name: "farm",
+    imgSrc: 'Terrain/icon_pond.png',
+  },
+  {
+    name: "ranch",
+    imgSrc: 'Terrain/icon_meadow.png',
+  },
+  {
+    name: "terrain",
+    imgSrc: 'Terrain/icon_dirtRoad.png',
+  },
+  {
+    name: "industrial",
+    imgSrc: 'Terrain/icon_pavedRoad.png',
+  },
+  {
+    name: "trade",
+    imgSrc: 'Trade/icon_tradeDepot.png',
   }
 ])
 </script>

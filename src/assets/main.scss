@@ -107,8 +107,14 @@
         text-decoration: none;
 
         &.router-link-exact-active {
-          background: linear-gradient(45deg, #E24534, #ED6846);
+          &:after {
+            width: 100%;
+          }
           color: #fafafa;
+
+          &:after {
+            transition: none;
+          }
         }
 
         &:after {
@@ -160,5 +166,11 @@
         }
       }
     }
+  }
+
+
+  // Views
+  .building-info__container {
+    background-color: #f4f4f4;
   }
 }
