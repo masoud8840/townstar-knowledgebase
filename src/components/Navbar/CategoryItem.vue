@@ -1,6 +1,6 @@
 <template>
   <router-link :to="`/${props.name}`" class="cat-item__container">
-    <img src="/public/images/TownStar/Farm/icon_bakery.png" alt="cat-item__icon" class="building__icon">
+    <img :src="`/public/images/TownStar/${props.imgSrc}`" alt="cat-item__icon" class="building__icon">
     <div class="cat-item__description">
       <h3>{{ props.name }}</h3>
       <p>{{ props.cost.toLocaleString('en-us') }}$</p>
