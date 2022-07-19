@@ -19,7 +19,7 @@
 <script setup>
 import CategoryTag from "./CategoryTag.vue";
 import CategoryItem from "./CategoryItem.vue"
-import {computed, ref} from "vue";
+import {computed, ref, inject} from "vue";
 
 // Tags category
 const currentTag = ref('');
@@ -33,181 +33,13 @@ const onTagChange = (name) => {
 // Search functionality
 const searchedText = ref("");
 const onSearchCrafts = () => {
-
 }
 
-const crafts = ref([
-  {
-    title: "farm",
-    items: [
-      {
-        name: 'bakery',
-        cost: 400000,
-        imgSrc: 'Farm/icon_bakery.png',
-        requirements: [
-          {
-            name: 'lumber',
-            icon: '',
-            qty: 10
-          },
-          {
-            name: "wood",
-            icon: '',
-            qty: 10,
-          },
-          {
-            name: "energy",
-            icon: '',
-            qty: 10,
-          }
-        ],
-        pricePerMin: 750
-      },
-      {
-        name: "cakery",
-        cost: 1000000,
-        imgSrc: 'Farm/icon_cakery.png',
-        requirements: [
-          {
-            name: 'lumber',
-            icon: '',
-            qty: 10
-          },
-          {
-            name: "wood",
-            icon: '',
-            qty: 10,
-          },
-          {
-            name: "energy",
-            icon: '',
-            qty: 10,
-          }
-        ],
-        pricePerMin: 1500
-      },
-      {
-        name: "candy shop",
-        cost: 150000,
-        imgSrc: 'Farm/icon_candyShop.png',
-        requirements: [
-          {
-            name: "wood",
-            icon: '',
-            qty: 10,
-          },
-        ],
-        pricePerMin: 150
-      }
-    ]
-  },
-  {
-    title: "ranch",
-    items: [
-      {
-        name: "ATV",
-        cost: 75000,
-        imgSrc: "Ranch/icon_ATV.png",
-        requirements: [
-          {
-            name: 'lumber',
-            icon: '',
-            qty: 5
-          },
-          {
-            name: "wood",
-            icon: '',
-            qty: 5,
-          },
-          {
-            name: "energy",
-            icon: '',
-            qty: 5,
-          }
-        ],
-        pricePerMin: 150
-      },
-      {
-        name: "chicken coop",
-        cost: 15000,
-        imgSrc: "Ranch/icon_chickenCoop.png",
-        requirements: [
-          {
-            name: 'wood',
-            icon: '',
-            qty: 3
-          },
-        ]
-      },
-      {
-        name: "feed mill",
-        cost: 5000,
-        imgSrc: "Ranch/icon_feedMill.png",
-        requirements: [
-          {
-            name: 'wood',
-            icon: '',
-            qty: 3
-          },
-        ]
-      },
-      {
-        name: "milk barn",
-        cost: 30000,
-        imgSrc: "Ranch/icon_milkBarn.png",
-        requirements: [
-          {
-            name: 'wood',
-            icon: '',
-            qty: 10
-          },
-        ]
-      },
-      {
-        name: "ranch house",
-        cost: 1250,
-        imgSrc: "Ranch/icon_ranchHouse.png",
-        requirements: [
-          {
-            name: 'wood',
-            icon: '',
-            qty: 1
-          },
-        ],
-        pricePerMin: 10
-      },
-      {
-        name: "sheep pen",
-        cost: 20000,
-        imgSrc: "Ranch/icon_sheepPen.png",
-        requirements: [
-          {
-            name: 'wood',
-            icon: '',
-            qty: 3
-          },
-        ]
-      },
-      {
-        name: "trough",
-        cost: 5000,
-        imgSrc: "Ranch/icon_trough.png",
-        requirements: [
-          {
-            name: 'wood',
-            icon: '',
-            qty: 1
-          },
-        ]
-      }
-    ]
-  }
-])
-
+const crafts = inject('crafts');
 
 const filteredCrafts = computed(() => {
   let craftsList = [...crafts.value];
-  if(currentTag.value !== '') craftsList = crafts.value.filter(a=> a.title === currentTag.value)
+  if (currentTag.value !== '') craftsList = crafts.value.filter(a => a.title === currentTag.value)
   // if(searchedText.value !== '') craftsList.map(craft => )
   return craftsList
 })
