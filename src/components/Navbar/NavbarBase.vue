@@ -32,17 +32,29 @@ const onTagChange = (name) => {
 }
 // Search functionality
 const searchedText = ref("");
-const onSearchCrafts = () => {
-}
+const onSearchCrafts = () => {}
 
 const crafts = inject('crafts');
 
 const filteredCrafts = computed(() => {
-  let craftsList = [...crafts.value];
-  if (currentTag.value !== '') craftsList = crafts.value.filter(a => a.title === currentTag.value)
-  // if(searchedText.value !== '') craftsList.map(craft => )
-  return craftsList
+  let craftsList = ref([...crafts.value]);
+  if (currentTag.value !== '') craftsList.value = crafts.value.filter(a => a.title === currentTag.value)
+  if(searchedText.value !== '') {}
+  return craftsList.value
 })
+
+// craftsList.filter(craft => craft.items.filter(item => item.keywords.filter((keyword,index) => {console.log(keyword[index] == searchedText.value.toLowerCase()); return keyword[index] == searchedText.value.toLowerCase()})))
+
+// crafts.value.map(craft => {
+//   craft.items.map(item => {
+//     item.keywords.map(keyword => {
+//
+//       if (keyword.includes(searchedText.value)) {
+//         console.log("Hello");
+//       }
+//     })
+//   })
+// })
 
 const categories = ref([
   {

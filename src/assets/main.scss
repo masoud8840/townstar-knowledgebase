@@ -193,8 +193,11 @@
 
     .outputs {
       width: 100%;
-      padding: 0 40px;
       display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+      padding: 25px 0;
 
       .output-card__container {
         background-color: var(--white);
@@ -232,17 +235,19 @@
           }
         }
 
-        .output-card__requirements {
+        .output-card__ingredients {
           background-color: var(--lightblue);
           border-radius: 3px;
-          padding: 10px;
-          margin: 12px 10px;
+          padding: 10px 5px;
+          gap: 5px;
+          display: grid;
+          margin: 10px 8px;
 
-
-          .output-card__requirement {
+          .output-card__ingredient {
             display: flex;
             align-items: center;
             gap: 5px;
+            text-transform: capitalize;
 
             img {
               width: 42px;
@@ -256,8 +261,10 @@
         }
 
         .output-card__prizes {
-          padding: 10px;
-
+          padding: 0 12px;
+          display: flex;
+          justify-content: center;
+          gap: 15px;
           .output-card__prize {
             display: flex;
             align-items: center;
@@ -271,6 +278,31 @@
               color: var(--text);
               font: 400 14px "Poppins";
             }
+          }
+        }
+      }
+    }
+
+    table {
+      border-collapse: collapse;
+      display: flex;
+      flex-direction: column;
+      width: 99%;
+      margin: 25px auto;
+      border: 2px solid #fafafa;
+      border-radius: 3px;
+      tr {
+        display: flex;
+        justify-content: space-between;
+        &:nth-child(even) {
+          background-color: #fafafa;
+        }
+
+        td {
+          padding: 15px;
+          font: 400 14px "Poppins";
+          &:nth-child(odd) {
+            text-transform: capitalize;
           }
         }
       }

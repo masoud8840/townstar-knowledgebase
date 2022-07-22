@@ -14,32 +14,15 @@ const crafts = ref([
     items: [
       {
         name: 'bakery',
-        cost: 400000,
+        cost: 800000,
         imgSrc: 'Farm/icon_bakery.png',
-        requirements: [
-          {
-            name: 'lumber',
-            icon: '',
-            qty: 10
-          },
-          {
-            name: "wood",
-            icon: '',
-            qty: 10,
-          },
-          {
-            name: "energy",
-            icon: '',
-            qty: 10,
-          }
-        ],
-        pricePerMin: 750,
+        pricePerMin: '150$',
         produces: [
           {
             item: "Jam",
             icon: "icon_strawberries",
-            cookTime: 60,
-            needsToProduce: [
+            cookTime: [60, 120, 240, 480],
+            ingredients: [
               {
                 icon: 'icon_strawberries',
                 item: "Strawberries",
@@ -57,11 +40,94 @@ const crafts = ref([
               }
             ],
             prizes: {
-              cash: 220000,
-              star: 18000
+              cash: 31700,
+              star: 1800
             }
           },
+          {
+            item: "Butter",
+            icon: "30",
+            cookTime: [30, 60, 120, 240],
+            ingredients: [
+              {
+                icon: '',
+                item: "Milk",
+                qty: 2
+              },
+              {
+                icon: '',
+                item: "salt",
+                qty: 2
+              },
+              {
+                icon: 'icon_sugar',
+                item: 'Sugar',
+                qty: 1
+              }
+            ]
+          },
+          {
+            item: "Baguette",
+            icon: "30",
+            cookTime: [60, 120, 240, 480],
+            ingredients: [
+              {
+                icon: 'icon_dough',
+                item: "Dough",
+                qty: 2
+              },
+              {
+                icon: 'icon_butter',
+                item: "butter",
+                qty: 2
+              },
+              {
+                icon: 'icon_wood',
+                item: 'wood',
+                qty: 2
+              }
+            ]
+          },
         ],
+        otherInfo: [
+          {
+            title: 'name',
+            value: 'Bakery',
+          },
+          {
+            title: 'building cost',
+            value: '400,000$'
+          },
+          {
+            title: 'destroy cost',
+            value: '100,000$'
+          },
+          {
+            title: "Labor cost",
+            value: '750$/min'
+          },
+          {
+            title: "build requirements",
+            value: 'Lumber x10, Wood x10, Energy x10'
+          },
+          {
+            title: "Shade",
+            value: "4x4"
+          },
+          {
+            title: "stores in",
+            value: "Store House"
+          },
+          {
+            title: "affected by",
+            value: "None"
+          },
+          {
+            title: "requires road",
+            value: "Yes"
+          },
+        ],
+        keywords: ['bakery','jam','butter','baguette']
       },
       {
         name: "cakery",

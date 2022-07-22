@@ -6,10 +6,10 @@
     <img src="/public/images/TownStar/Products/icon_jam.png" :alt="`icon-${props.name}`" class="output-card__product">
     <div class="output-card__time">
       <img src="/public/images/TownStar/Icons/icon_clock.png" alt="icon-clock">
-      <span>{{ props.cookTime }}s</span>
+      <span v-for="(time,index) in props.cookTime" :key="index">{{ time }}s</span>
     </div>
-    <section class="output-card__requirements">
-      <article class="output-card__requirement" v-for="(requirement, index) in props.requirements" :key="index">
+    <section class="output-card__ingredients">
+      <article class="output-card__ingredient" v-for="(requirement, index) in props.ingredients" :key="index">
         <img :src="`/public/images/TownStar/Products/${requirement.icon}.png`" alt="req-img">
         <p>0/{{ `${requirement.qty} ${requirement.item}` }}</p>
       </article>
@@ -17,11 +17,11 @@
     <section class="output-card__prizes">
       <article class="output-card__prize">
         <img src="/public/images/TownStar/Icons/icon_cash.png" alt="icon-cash">
-        <p>{{ props.prizes.cash }}</p>
+        <p>{{ (props.prizes.cash).toLocaleString('en-US') }}</p>
       </article>
       <article class="output-card__prize">
         <img src="/public/images/TownStar/Icons/icon_star.png" alt="icon-star">
-        <p>{{ props.prizes.star }}</p>
+        <p>{{ (props.prizes.star).toLocaleString('en-US') }}</p>
       </article>
     </section>
   </section>
@@ -29,17 +29,16 @@
 
 
 <script setup>
-// const props = defineProps(['craftTitle','cookTime',''])
 const props = defineProps({
   cardTitle: {
     type: String,
     default: "Undefined",
   },
   cookTime: {
-    type: Number,
+    type: Array,
     default: 0,
   },
-  requirements: {
+  ingredients: {
     type: Array,
     default: ['none']
   },

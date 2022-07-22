@@ -1,16 +1,18 @@
 <template>
   <div class="building-info__container">
-    <h1>Craft ID: {{ props.craftID }}</h1>
-    {{ currentCraft }}
-
     <img :src="`/public/images/TownStar/${currentCraft.imgSrc}`" alt="building-img" class="building__img">
-
+    <table>
+      <tr v-for="(item,index) in currentCraft.otherInfo" :key="index">
+        <td>{{ item.title }}</td>
+        <td>{{ item.value }}</td>
+      </tr>
+    </table>
     <div class="outputs">
       <output-card v-for="(product,index) in currentCraft.produces"
                    :key="index"
                    :card-title="product.item"
                    :cook-time="product.cookTime"
-                   :requirements="product.needsToProduce"
+                   :ingredients="product.ingredients"
                    :prizes="product.prizes"
       ></output-card>
     </div>
