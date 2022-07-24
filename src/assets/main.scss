@@ -23,6 +23,7 @@
     display: flex;;
     flex-direction: column;
     padding: 10px;
+    min-height: 100vh;
 
     & * {
       text-transform: capitalize;
@@ -210,7 +211,7 @@
           text-align: center;
           background-color: var(--yellow);
           color: var(--red);
-          padding: 10px 0;
+          padding: 10px ;
         }
 
         .output-card__product {
@@ -261,10 +262,10 @@
         }
 
         .output-card__prizes {
-          padding: 0 12px;
           display: flex;
           justify-content: center;
           gap: 15px;
+          padding: 10px 0;
           .output-card__prize {
             display: flex;
             align-items: center;
@@ -301,6 +302,7 @@
         td {
           padding: 15px;
           font: 400 14px "Poppins";
+          color: var(--text);
           &:nth-child(odd) {
             text-transform: capitalize;
           }

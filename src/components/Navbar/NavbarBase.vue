@@ -43,19 +43,6 @@ const filteredCrafts = computed(() => {
   return craftsList.value
 })
 
-// craftsList.filter(craft => craft.items.filter(item => item.keywords.filter((keyword,index) => {console.log(keyword[index] == searchedText.value.toLowerCase()); return keyword[index] == searchedText.value.toLowerCase()})))
-
-// crafts.value.map(craft => {
-//   craft.items.map(item => {
-//     item.keywords.map(keyword => {
-//
-//       if (keyword.includes(searchedText.value)) {
-//         console.log("Hello");
-//       }
-//     })
-//   })
-// })
-
 const categories = ref([
   {
     name: "farm",

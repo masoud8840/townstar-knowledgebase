@@ -14,14 +14,91 @@ const crafts = ref([
     items: [
       {
         name: 'bakery',
-        cost: 800000,
+        cost: 400000,
         imgSrc: 'Farm/icon_bakery.png',
-        pricePerMin: '150$',
         produces: [
           {
+            item: "Butter",
+            icon: "icon_butter",
+            cookTime: [30],
+            ingredients: [
+              {
+                icon: 'icon_milk',
+                item: "Milk",
+                qty: 2,
+              },
+              {
+                icon: 'icon_salt',
+                item: 'Salt',
+                qty: 2
+              },
+              {
+                icon: 'icon_sugar',
+                item: "Sugar",
+                qty: 1
+              }
+            ],
+            prizes: {
+              cash: 31700,
+              star: 1800
+            }
+          },
+          {
+            item: "Dough",
+            icon: "icon_dough",
+            cookTime: [30],
+            ingredients: [
+              {
+                icon: 'icon_flour',
+                item: "Flour",
+                qty: 5,
+              },
+              {
+                icon: 'icon_eggs',
+                item: 'Eggs',
+                qty: 1
+              },
+              {
+                icon: 'icon_butter',
+                item: "Butter",
+                qty: 1
+              }
+            ],
+            prizes: {
+              cash: 31700,
+              star: 1800
+            }
+          },
+          {
+            item: "Baguette",
+            icon: "icon_baguette",
+            cookTime: [60],
+            ingredients: [
+              {
+                icon: 'icon_dough',
+                item: "Dough",
+                qty: 2,
+              },
+              {
+                icon: 'icon_butter',
+                item: 'Butter',
+                qty: 2
+              },
+              {
+                icon: 'icon_wood',
+                item: "Wood",
+                qty: 2
+              }
+            ],
+            prizes: {
+              cash: 31700,
+              star: 1800
+            }
+          },
+          {
             item: "Jam",
-            icon: "icon_strawberries",
-            cookTime: [60, 120, 240, 480],
+            icon: "icon_jam",
+            cookTime: [60],
             ingredients: [
               {
                 icon: 'icon_strawberries',
@@ -43,50 +120,6 @@ const crafts = ref([
               cash: 31700,
               star: 1800
             }
-          },
-          {
-            item: "Butter",
-            icon: "30",
-            cookTime: [30, 60, 120, 240],
-            ingredients: [
-              {
-                icon: '',
-                item: "Milk",
-                qty: 2
-              },
-              {
-                icon: '',
-                item: "salt",
-                qty: 2
-              },
-              {
-                icon: 'icon_sugar',
-                item: 'Sugar',
-                qty: 1
-              }
-            ]
-          },
-          {
-            item: "Baguette",
-            icon: "30",
-            cookTime: [60, 120, 240, 480],
-            ingredients: [
-              {
-                icon: 'icon_dough',
-                item: "Dough",
-                qty: 2
-              },
-              {
-                icon: 'icon_butter',
-                item: "butter",
-                qty: 2
-              },
-              {
-                icon: 'icon_wood',
-                item: 'wood',
-                qty: 2
-              }
-            ]
           },
         ],
         otherInfo: [
@@ -127,43 +160,234 @@ const crafts = ref([
             value: "Yes"
           },
         ],
-        keywords: ['bakery','jam','butter','baguette']
+        keywords: ['bakery', 'jam', 'butter', 'baguette']
       },
       {
         name: "cakery",
         cost: 1000000,
         imgSrc: 'Farm/icon_cakery.png',
-        requirements: [
-          {
-            name: 'lumber',
-            icon: '',
-            qty: 10
-          },
-          {
-            name: "wood",
-            icon: '',
-            qty: 10,
-          },
-          {
-            name: "energy",
-            icon: '',
-            qty: 10,
-          }
-        ],
         pricePerMin: 1500
       },
       {
-        name: "candy shop",
+        name: 'Candy Shop',
         cost: 150000,
         imgSrc: 'Farm/icon_candyShop.png',
-        requirements: [
+        produces: [
           {
-            name: "wood",
-            icon: '',
-            qty: 10,
+            item: "Candy Canes",
+            icon: "icon_candyCanes",
+            cookTime: [120],
+            ingredients: [
+              {
+                icon: 'icon_peppermint',
+                item: "Peppermint",
+                qty: 5,
+              },
+              {
+                icon: 'icon_sugar',
+                item: 'Sugar',
+                qty: 3
+              },
+              {
+                icon: 'icon_energy',
+                item: "Energy",
+                qty: 5
+              }
+            ],
+            prizes: {
+              cash: 31700,
+              star: 1800
+            }
+          },
+          {
+            item: "Chocolate CoveredStrawberries",
+            icon: "icon_chocolateCoveredStrawberries",
+            cookTime: [45],
+            ingredients: [
+              {
+                icon: 'icon_strawberries',
+                item: "Strawberries",
+                qty: 6,
+              },
+              {
+                icon: 'icon_chocolateBar',
+                item: 'Chocolate Bar',
+                qty: 2
+              },
+              {
+                icon: 'icon_energy',
+                item: "Energy",
+                qty: 2
+              }
+            ],
+            prizes: {
+              cash: 31700,
+              star: 1800
+            },
+
+          }
+        ],
+        otherInfo: [
+          {
+            title: 'name',
+            value: 'Candy Shop',
+          },
+          {
+            title: 'building cost',
+            value: '150,000$'
+          },
+          {
+            title: 'destroy cost',
+            value: '37,500$'
+          },
+          {
+            title: "Labor cost",
+            value: '150$/Min'
+          },
+          {
+            title: "build requirements",
+            value: 'Wood x10'
+          },
+          {
+            title: "Shade",
+            value: "2x2"
+          },
+          {
+            title: "stores in",
+            value: "Store House"
+          },
+          {
+            title: "affected by",
+            value: "None"
+          },
+          {
+            title: "requires road",
+            value: "Yes"
           },
         ],
-        pricePerMin: 150
+      },
+      {
+        name: 'chocolate shop',
+        cost: 300000,
+        imgSrc: 'Farm/icon_chocolateShop.png',
+        produces: [
+          {
+            item: "Chocolate Bar",
+            icon: "icon_chocolateBar",
+            cookTime: [90],
+            ingredients: [
+              {
+                icon: 'icon_cocoa',
+                item: "Cocoa",
+                qty: 3,
+              },
+              {
+                icon: 'icon_sugar',
+                item: 'Sugar',
+                qty: 2
+              },
+              {
+                icon: 'icon_milk',
+                item: "Milk",
+                qty: 1
+              }
+            ],
+            prizes: {
+              cash: 31700,
+              star: 1800
+            }
+          },
+          {
+            item: "Fancy Cake",
+            icon: "icon_fancyCake",
+            cookTime: [30],
+            ingredients: [
+              {
+                icon: 'icon_cake',
+                item: "Cake",
+                qty: 1,
+              },
+              {
+                icon: 'icon_chocolateBar',
+                item: 'Chocolate Bar',
+                qty: 3
+              },
+              {
+                icon: 'icon_strawberries',
+                item: "Strawberries",
+                qty: 2
+              }
+            ],
+            prizes: {
+              cash: 31700,
+              star: 1800
+            },
+          },
+          {
+            item: "Decorated Cake",
+            icon: "icon_decoratedCake",
+            cookTime: [60],
+            ingredients: [
+              {
+                icon: 'icon_cake',
+                item: "Cake",
+                qty: 1,
+              },
+              {
+                icon: 'icon_chocolateBar',
+                item: 'Chocolate Bar',
+                qty: 1
+              },
+              {
+                icon: 'icon_candyCanes',
+                item: "Candy Canes",
+                qty: 2
+              }
+            ],
+            prizes: {
+              cash: 31700,
+              star: 1800
+            },
+          }
+        ],
+        otherInfo: [
+          {
+            title: 'name',
+            value: 'Chocolate Shop',
+          },
+          {
+            title: 'building cost',
+            value: '300,000$'
+          },
+          {
+            title: 'destroy cost',
+            value: '37,500$'
+          },
+          {
+            title: "Labor cost",
+            value: '300$/Min'
+          },
+          {
+            title: "build requirements",
+            value: 'Wood x10'
+          },
+          {
+            title: "Shade",
+            value: "2x2"
+          },
+          {
+            title: "stores in",
+            value: "Store House"
+          },
+          {
+            title: "affected by",
+            value: "None"
+          },
+          {
+            title: "requires road",
+            value: "Yes"
+          },
+        ],
       }
     ]
   },
@@ -218,16 +442,75 @@ const crafts = ref([
         ]
       },
       {
-        name: "milk barn",
+        name: 'Milk Barn',
         cost: 30000,
-        imgSrc: "Ranch/icon_milkBarn.png",
-        requirements: [
+        imgSrc: 'Ranch/icon_milkBarn.png',
+        produces: [
           {
-            name: 'wood',
-            icon: '',
-            qty: 10
+            item: "Milk",
+            icon: "icon_milk",
+            cookTime: [30],
+            ingredients: [
+              {
+                icon: 'icon_feed',
+                item: "Feed",
+                qty: 8,
+              },
+              {
+                icon: 'icon_wood',
+                item: 'Wood',
+                qty: 1
+              },
+              {
+                icon: 'icon_water',
+                item: "Water",
+                qty: 3
+              }
+            ],
+            prizes: {
+              cash: 40000,
+              star: 220
+            }
           },
-        ]
+        ],
+        otherInfo: [
+          {
+            title: 'name',
+            value: 'Milk Barn',
+          },
+          {
+            title: 'building cost',
+            value: '30,000$'
+          },
+          {
+            title: 'destroy cost',
+            value: '7,500$'
+          },
+          // {
+          //   title: "Labor cost",
+          //   value: '150$/Min'
+          // },
+          {
+            title: "build requirements",
+            value: 'Wood x10'
+          },
+          {
+            title: "Shade",
+            value: "2x2"
+          },
+          {
+            title: "stores in",
+            value: "Store House"
+          },
+          {
+            title: "affected by",
+            value: "Pollution"
+          },
+          {
+            title: "requires road",
+            value: "No"
+          },
+        ],
       },
       {
         name: "ranch house",
@@ -243,16 +526,75 @@ const crafts = ref([
         pricePerMin: 10
       },
       {
-        name: "sheep pen",
+        name: 'Seep Pen',
         cost: 20000,
-        imgSrc: "Ranch/icon_sheepPen.png",
-        requirements: [
+        imgSrc: 'Ranch/icon_milkBarn.png',
+        produces: [
           {
-            name: 'wood',
-            icon: '',
-            qty: 3
+            item: "Wool",
+            icon: "icon_wool",
+            cookTime: [60],
+            ingredients: [
+              {
+                icon: 'icon_feed',
+                item: "Feed",
+                qty: 8,
+              },
+              {
+                icon: 'icon_wood',
+                item: 'Wood',
+                qty: 1
+              },
+              {
+                icon: 'icon_water',
+                item: "Water",
+                qty: 5
+              }
+            ],
+            prizes: {
+              cash: 37500,
+              star: 220
+            }
           },
-        ]
+        ],
+        otherInfo: [
+          {
+            title: 'name',
+            value: 'Sheep Pen',
+          },
+          {
+            title: 'building cost',
+            value: '20,000$'
+          },
+          {
+            title: 'destroy cost',
+            value: '5,000$'
+          },
+          // {
+          //   title: "Labor cost",
+          //   value: '150$/Min'
+          // },
+          {
+            title: "build requirements",
+            value: 'Wood x3'
+          },
+          {
+            title: "Shade",
+            value: "None"
+          },
+          {
+            title: "stores in",
+            value: "Store House"
+          },
+          {
+            title: "affected by",
+            value: "Pollution"
+          },
+          {
+            title: "requires road",
+            value: "No"
+          },
+        ],
       },
       {
         name: "trough",
@@ -265,6 +607,84 @@ const crafts = ref([
             qty: 1
           },
         ]
+      },
+    ]
+  },
+  {
+    title: "terrain",
+    items: [
+      {
+        name: 'Dirt Road',
+        cost: 1000,
+        imgSrc: 'Terrain/icon_dirtRoad.png',
+        otherInfo: [
+          {
+            title: 'name',
+            value: 'Dirt Road',
+          },
+          {
+            title: 'build cost',
+            value: '1000$'
+          },
+          {
+            title: 'destroy cost',
+            value: '500$'
+          },
+          {
+            title: 'shade',
+            value: 'None'
+          },
+          {
+            title: 'affected by',
+            value: 'None'
+          },
+          {
+            title: 'requires road',
+            value: 'No'
+          }
+        ],
+      },
+      {
+        name: 'Meadow',
+        cost: 500,
+        imgSrc: 'Terrain/icon_meadow.png',
+        otherInfo: [
+          {
+            title: 'name',
+            value: 'Meadow',
+          },
+          {
+            title: 'build cost',
+            value: '500$'
+          },
+          {
+            title: 'destroy cost',
+            value: '125$'
+          },
+          {
+            title: 'shade',
+            value: 'None'
+          },
+          {
+            title: 'affected by',
+            value: 'None'
+          },
+          {
+            title: 'requires road',
+            value: 'No'
+          }
+        ],
+        produces: [
+          {
+            item: "Feed",
+            icon: "icon_feed",
+            cookTime: [45],
+            prizes: {
+              cash: 37500,
+              star: 220
+            }
+          },
+        ],
       },
     ]
   }
