@@ -20,7 +20,7 @@
 
   nav {
     background-color: #f4f4f4;
-    display: flex;;
+    display: flex;
     flex-direction: column;
     padding: 10px;
     min-height: 100vh;
@@ -100,7 +100,6 @@
         margin-bottom: 10px;
       }
 
-
       .cat-item__container {
         display: flex;
         align-items: center;
@@ -112,7 +111,7 @@
         position: relative;
         z-index: 0;
         overflow: hidden;
-        transition: color .3s;
+        transition: color 0.3s;
         color: #333333;
         text-decoration: none;
 
@@ -129,16 +128,15 @@
         }
 
         &:after {
-          content: '';
+          content: "";
           position: absolute;
           top: 0;
           left: 0;
           width: 0;
           height: 100%;
-          background: linear-gradient(45deg, #E24534, #ED6846);
-          transition: width .5s;
+          background: linear-gradient(45deg, #e24534, #ed6846);
+          transition: width 0.5s;
           z-index: -1;
-
         }
 
         &:hover {
@@ -165,7 +163,6 @@
           border-radius: 3px;
         }
 
-
         h3 {
           font: 500 16px "Poppins";
           line-height: 1.1;
@@ -179,11 +176,10 @@
     }
   }
 
-
   // Views
   .building-info__container {
     background-color: #f4f4f4;
-    display: flex;;
+    display: flex;
     flex-direction: column;
 
     .building__img {
@@ -211,7 +207,7 @@
           text-align: center;
           background-color: var(--yellow);
           color: var(--red);
-          padding: 10px ;
+          padding: 10px;
         }
 
         .output-card__product {
@@ -240,7 +236,6 @@
           background-color: var(--lightblue);
           border-radius: 3px;
           padding: 10px 5px;
-          gap: 5px;
           display: grid;
           margin: 10px 8px;
 
