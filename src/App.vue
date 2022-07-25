@@ -12,8 +12,9 @@
 </template>
 <script setup>
 import NavbarBase from "./components/Navbar/NavbarBase.vue";
-import { computed, ref } from "vue";
+import { computed, ref, watch } from "vue";
 import { provide } from "vue";
+import { useRoute } from "vue-router";
 
 const navbarIsOpen = ref(false);
 const onToggleNavbar = () => {
@@ -25,6 +26,10 @@ const toggleNavbarOff = () => {
 const navbarStyle = computed(() => {
   if (navbarIsOpen.value) return { open };
   else return {};
+});
+const route = useRoute();
+watch(route, () => {
+  navbarIsOpen.value = false;
 });
 const crafts = ref([
   {
