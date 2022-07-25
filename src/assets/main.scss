@@ -17,13 +17,28 @@
   display: grid;
   grid-template-columns: 380px auto;
   gap: 25px;
-
+  .burger-menu {
+    position: fixed;
+    border: 0;
+    border-radius: 3px;
+    background-color: var(--white);
+    top: 15px;
+    right: 15px;
+    display: none;
+    gap: 7px;
+    padding: 3px;
+    cursor: pointer;
+    img {
+      width: 32px;
+    }
+  }
   nav {
     background-color: #f4f4f4;
     display: flex;
     flex-direction: column;
     padding: 10px;
     min-height: 100vh;
+    transition: all 0.45s;
 
     & * {
       text-transform: capitalize;
@@ -35,7 +50,7 @@
     }
 
     input {
-      height: 40px;
+      min-height: 40px;
       padding: 0 10px 0 20px;
       border-radius: 25px;
       border: 0;
@@ -164,7 +179,7 @@
         }
 
         h3 {
-          font: 500 16px "Poppins";
+          font: 400 16px "Poppins";
           line-height: 1.1;
         }
 
@@ -303,6 +318,36 @@
           }
         }
       }
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  #app {
+    grid-template-columns: 1fr;
+    nav {
+      // display: none;
+      position: fixed;
+      top: 0;
+      left: -350px;
+      width: 350px;
+      box-shadow: 0 0 10px #a9a9a9aa;
+      overflow-y: auto;
+      height: 100vh;
+      &.open {
+        left: 0;
+      }
+    }
+
+    .building-info__container {
+      &.hideBackDrop {
+        overflow: hidden;
+        height: 100vh;
+      }
+    }
+
+    .burger-menu {
+      display: grid;
     }
   }
 }

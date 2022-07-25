@@ -1,12 +1,31 @@
 <template>
-  <navbar-base></navbar-base>
-  <router-view></router-view>
+  <navbar-base :class="navbarStyle"></navbar-base>
+  <button class="burger-menu" @click="onToggleNavbar">
+    <img
+      src="/public/images/Navbar/Menu.svg"
+      alt="menu-btn"
+      v-if="!navbarIsOpen"
+    />
+    <img src="/public/images/Navbar/CloseBtn.svg" alt="close-btn" v-else />
+  </button>
+  <router-view @click="toggleNavbarOff" :overflow="navbarIsOpen"></router-view>
 </template>
 <script setup>
 import NavbarBase from "./components/Navbar/NavbarBase.vue";
-import { ref } from "vue";
+import { computed, ref } from "vue";
 import { provide } from "vue";
 
+const navbarIsOpen = ref(false);
+const onToggleNavbar = () => {
+  navbarIsOpen.value = !navbarIsOpen.value;
+};
+const toggleNavbarOff = () => {
+  navbarIsOpen.value = false;
+};
+const navbarStyle = computed(() => {
+  if (navbarIsOpen.value) return { open };
+  else return {};
+});
 const crafts = ref([
   {
     title: "farm",
@@ -161,7 +180,7 @@ const crafts = ref([
             value: "Bakery",
           },
           {
-            title: "building cost",
+            title: "build cost",
             value: "400,000$",
           },
           {
@@ -259,7 +278,7 @@ const crafts = ref([
             value: "Candy Shop",
           },
           {
-            title: "building cost",
+            title: "build cost",
             value: "150,000$",
           },
           {
@@ -388,7 +407,7 @@ const crafts = ref([
             value: "Chocolate Shop",
           },
           {
-            title: "building cost",
+            title: "build cost",
             value: "300,000$",
           },
           {
@@ -465,7 +484,7 @@ const crafts = ref([
             value: "Canernet Vines",
           },
           {
-            title: "building cost",
+            title: "build cost",
             value: "3,500$",
           },
           {
@@ -475,6 +494,10 @@ const crafts = ref([
           {
             title: "build requirements",
             value: "Lumber x1",
+          },
+          {
+            title: "lobor cost",
+            value: "None",
           },
           {
             title: "Shade",
@@ -533,7 +556,7 @@ const crafts = ref([
             value: "Chardonnay Vines",
           },
           {
-            title: "building cost",
+            title: "build cost",
             value: "1,500$",
           },
           {
@@ -543,6 +566,10 @@ const crafts = ref([
           {
             title: "build requirements",
             value: "Lumber x1",
+          },
+          {
+            title: "lobor cost",
+            value: "None",
           },
           {
             title: "Shade",
@@ -601,7 +628,7 @@ const crafts = ref([
             value: "Cocoa Tree",
           },
           {
-            title: "building cost",
+            title: "build cost",
             value: "2,500$",
           },
           {
@@ -611,6 +638,10 @@ const crafts = ref([
           {
             title: "build requirements",
             value: "Lumber x1",
+          },
+          {
+            title: "Lobor cost",
+            value: "None",
           },
           {
             title: "Shade",
@@ -659,7 +690,7 @@ const crafts = ref([
             value: "Cotton Field",
           },
           {
-            title: "building cost",
+            title: "build cost",
             value: "250$",
           },
           {
@@ -668,6 +699,10 @@ const crafts = ref([
           },
           {
             title: "build requirements",
+            value: "None",
+          },
+          {
+            title: "lobor cost",
             value: "None",
           },
           {
@@ -699,7 +734,7 @@ const crafts = ref([
             value: "Farm House",
           },
           {
-            title: "building cost",
+            title: "build cost",
             value: "1,250$",
           },
           {
@@ -707,12 +742,12 @@ const crafts = ref([
             value: "313$",
           },
           {
-            title: "Lobor Cost",
-            value: "10$/Min",
-          },
-          {
             title: "build requirements",
             value: "Wood x1",
+          },
+          {
+            title: "Lobor Cost",
+            value: "10$/Min",
           },
           {
             title: "Shade",
@@ -743,7 +778,7 @@ const crafts = ref([
             value: "Farm Tractor",
           },
           {
-            title: "building cost",
+            title: "build cost",
             value: "75,000$",
           },
           {
@@ -751,12 +786,12 @@ const crafts = ref([
             value: "313$",
           },
           {
-            title: "Lobor Cost",
-            value: "150$/Min",
-          },
-          {
             title: "build requirements",
             value: "Lumber x5, Wood x5, Energy x5",
+          },
+          {
+            title: "Lobor Cost",
+            value: "150$/Min",
           },
           {
             title: "Shade",
@@ -787,7 +822,7 @@ const crafts = ref([
             value: "Lumber Yard",
           },
           {
-            title: "building cost",
+            title: "build cost",
             value: "20,000$",
           },
           {
@@ -795,12 +830,12 @@ const crafts = ref([
             value: "5,000$",
           },
           {
-            title: "Lobor Cost",
-            value: "None",
-          },
-          {
             title: "build requirements",
             value: "Wood x5",
+          },
+          {
+            title: "Lobor Cost",
+            value: "None",
           },
           {
             title: "Shade",
@@ -831,7 +866,7 @@ const crafts = ref([
             value: "Lumberjack House",
           },
           {
-            title: "building cost",
+            title: "build cost",
             value: "2,500$",
           },
           {
@@ -839,12 +874,12 @@ const crafts = ref([
             value: "625$",
           },
           {
-            title: "Lobor Cost",
-            value: "30$/Min",
-          },
-          {
             title: "build requirements",
             value: "None",
+          },
+          {
+            title: "Lobor Cost",
+            value: "30$/Min",
           },
           {
             title: "Shade",
@@ -903,7 +938,7 @@ const crafts = ref([
             value: "Peppermint Field",
           },
           {
-            title: "building cost",
+            title: "build cost",
             value: "2,500$",
           },
           {
@@ -965,7 +1000,7 @@ const crafts = ref([
             value: "Peppermint Field",
           },
           {
-            title: "building cost",
+            title: "build cost",
             value: "2,500$",
           },
           {
@@ -973,12 +1008,12 @@ const crafts = ref([
             value: "625$",
           },
           {
-            title: "Lobor Cost",
-            value: "None",
-          },
-          {
             title: "build requirements",
             value: "Wood x3",
+          },
+          {
+            title: "Lobor Cost",
+            value: "None",
           },
           {
             title: "Shade",
@@ -1008,21 +1043,42 @@ const crafts = ref([
         name: "ATV",
         cost: 75000,
         imgSrc: "Ranch/icon_ATV.png",
-        requirements: [
+        otherInfo: [
           {
-            name: "lumber",
-            icon: "",
-            qty: 5,
+            title: "name",
+            value: "ATV",
           },
           {
-            name: "wood",
-            icon: "",
-            qty: 5,
+            title: "build cost",
+            value: "75,000$",
           },
           {
-            name: "energy",
-            icon: "",
-            qty: 5,
+            title: "destroy cost",
+            value: "18,750$",
+          },
+          {
+            title: "Labor cost",
+            value: "150$/min",
+          },
+          {
+            title: "build requirements",
+            value: "Lumber x5, Wood x5, Energy x5",
+          },
+          {
+            title: "Shade",
+            value: "1x1",
+          },
+          {
+            title: "stores in",
+            value: "None",
+          },
+          {
+            title: "affected by",
+            value: "None",
+          },
+          {
+            title: "requires road",
+            value: "Yes",
           },
         ],
         keywords: ["atv", "ranch house"],
@@ -1031,11 +1087,65 @@ const crafts = ref([
         name: "chicken coop",
         cost: 15000,
         imgSrc: "Ranch/icon_chickenCoop.png",
-        requirements: [
+        produces: [
           {
-            name: "wood",
-            icon: "",
-            qty: 3,
+            item: "Eggs",
+            icon: "icon_eggs",
+            cookTime: [30, 60, 120, 240],
+            ingredients: [
+              {
+                icon: "icon_feed",
+                item: "Feed",
+                qty: 3,
+              },
+              {
+                icon: "icon_water",
+                item: "Water",
+                qty: 1,
+              },
+            ],
+            prizes: {
+              cash: 16700,
+              star: 1800,
+            },
+          },
+        ],
+        otherInfo: [
+          {
+            title: "name",
+            value: "Chicken Coop",
+          },
+          {
+            title: "build cost",
+            value: "15,000$",
+          },
+          {
+            title: "destroy cost",
+            value: "3,750$",
+          },
+          {
+            title: "Labor cost",
+            value: "None",
+          },
+          {
+            title: "build requirements",
+            value: "Wood x3",
+          },
+          {
+            title: "Shade",
+            value: "None",
+          },
+          {
+            title: "stores in",
+            value: "Store House",
+          },
+          {
+            title: "affected by",
+            value: "Pollution",
+          },
+          {
+            title: "requires road",
+            value: "No",
           },
         ],
         keywords: ["chicken", "chicken coop", "eggs"],
@@ -1044,11 +1154,60 @@ const crafts = ref([
         name: "feed mill",
         cost: 5000,
         imgSrc: "Ranch/icon_feedMill.png",
-        requirements: [
+        produces: [
           {
-            name: "wood",
-            icon: "",
-            qty: 3,
+            item: "Feed",
+            icon: "icon_feed",
+            cookTime: [10, 20, 30, 40],
+            ingredients: [
+              {
+                icon: "icon_wheat",
+                item: "Wheat",
+                qty: 2,
+              },
+            ],
+            prizes: {
+              cash: 16700,
+              star: 1800,
+            },
+          },
+        ],
+        otherInfo: [
+          {
+            title: "name",
+            value: "Feed Mill",
+          },
+          {
+            title: "build cost",
+            value: "5,000$",
+          },
+          {
+            title: "destroy cost",
+            value: "1,250$",
+          },
+          {
+            title: "Labor cost",
+            value: "None",
+          },
+          {
+            title: "build requirements",
+            value: "Wood x3",
+          },
+          {
+            title: "Shade",
+            value: "None",
+          },
+          {
+            title: "stores in",
+            value: "Trough",
+          },
+          {
+            title: "affected by",
+            value: "None",
+          },
+          {
+            title: "requires road",
+            value: "No",
           },
         ],
         keywords: ["feed"],
@@ -1061,7 +1220,7 @@ const crafts = ref([
           {
             item: "Milk",
             icon: "icon_milk",
-            cookTime: [30],
+            cookTime: [30, 60, 120, 240],
             ingredients: [
               {
                 icon: "icon_feed",
@@ -1091,12 +1250,16 @@ const crafts = ref([
             value: "Milk Barn",
           },
           {
-            title: "building cost",
+            title: "build cost",
             value: "30,000$",
           },
           {
             title: "destroy cost",
             value: "7,500$",
+          },
+          {
+            title: "Lobor cost",
+            value: "None",
           },
           {
             title: "build requirements",
@@ -1125,20 +1288,73 @@ const crafts = ref([
         name: "ranch house",
         cost: 1250,
         imgSrc: "Ranch/icon_ranchHouse.png",
-        requirements: [
+        produces: [
           {
-            name: "wood",
-            icon: "",
-            qty: 1,
+            item: "Eggs",
+            icon: "icon_eggs",
+            cookTime: [30, 60, 120, 240],
+            ingredients: [
+              {
+                icon: "icon_feed",
+                item: "Feed",
+                qty: 3,
+              },
+              {
+                icon: "icon_water",
+                item: "Water",
+                qty: 1,
+              },
+            ],
+            prizes: {
+              cash: 16700,
+              star: 1800,
+            },
           },
         ],
-        pricePerMin: 10,
+        otherInfo: [
+          {
+            title: "name",
+            value: "Ranch House",
+          },
+          {
+            title: "build cost",
+            value: "1,250$",
+          },
+          {
+            title: "destroy cost",
+            value: "313$",
+          },
+          {
+            title: "Labor cost",
+            value: "10$/Min",
+          },
+          {
+            title: "build requirements",
+            value: "Wood x1",
+          },
+          {
+            title: "Shade",
+            value: "1x1",
+          },
+          {
+            title: "stores in",
+            value: "None",
+          },
+          {
+            title: "affected by",
+            value: "None",
+          },
+          {
+            title: "requires road",
+            value: "Yes",
+          },
+        ],
         keywords: ["ranch house"],
       },
       {
         name: "Seep Pen",
         cost: 20000,
-        imgSrc: "Ranch/icon_milkBarn.png",
+        imgSrc: "Ranch/icon_sheepPen.png",
         produces: [
           {
             item: "Wool",
@@ -1173,12 +1389,16 @@ const crafts = ref([
             value: "Sheep Pen",
           },
           {
-            title: "building cost",
+            title: "build cost",
             value: "20,000$",
           },
           {
             title: "destroy cost",
             value: "5,000$",
+          },
+          {
+            title: "Lobor cost",
+            value: "None",
           },
           {
             title: "build requirements",
@@ -1207,11 +1427,42 @@ const crafts = ref([
         name: "trough",
         cost: 5000,
         imgSrc: "Ranch/icon_trough.png",
-        requirements: [
+        otherInfo: [
           {
-            name: "wood",
-            icon: "",
-            qty: 1,
+            title: "name",
+            value: "Feed Mill",
+          },
+          {
+            title: "build cost",
+            value: "5,000",
+          },
+          {
+            title: "destroy cost",
+            value: "1,250$",
+          },
+          {
+            title: "Labor cost",
+            value: "None",
+          },
+          {
+            title: "build requirements",
+            value: "Wood x1",
+          },
+          {
+            title: "Shade",
+            value: "None",
+          },
+          {
+            title: "stores in",
+            value: "None",
+          },
+          {
+            title: "affected by",
+            value: "None",
+          },
+          {
+            title: "requires road",
+            value: "No",
           },
         ],
         keywords: ["trough"],
