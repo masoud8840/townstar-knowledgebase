@@ -12,6 +12,40 @@ const crafts = ref([
     title: "farm",
     items: [
       {
+        name: "cakery",
+        cost: 1000000,
+        imgSrc: "Farm/icon_cakery.png",
+        produces: [
+          {
+            item: "Butter",
+            icon: "icon_butter",
+            cookTime: [30],
+            ingredients: [
+              {
+                icon: "icon_milk",
+                item: "Milk",
+                qty: 2,
+              },
+              {
+                icon: "icon_salt",
+                item: "Salt",
+                qty: 2,
+              },
+              {
+                icon: "icon_sugar",
+                item: "Sugar",
+                qty: 1,
+              },
+            ],
+            prizes: {
+              cash: 31700,
+              star: 1800,
+            },
+          },
+        ],
+        keywords: ["cakery", "jam", "butter", "baguette"],
+      },
+      {
         name: "bakery",
         cost: 400000,
         imgSrc: "Farm/icon_bakery.png",
@@ -160,13 +194,6 @@ const crafts = ref([
           },
         ],
         keywords: ["bakery", "jam", "butter", "baguette"],
-      },
-      {
-        name: "cakery",
-        cost: 1000000,
-        imgSrc: "Farm/icon_cakery.png",
-        pricePerMin: 1500,
-        keywords: ["cakery", "jam", "butter", "baguette"],
       },
       {
         name: "Candy Shop",
@@ -400,6 +427,578 @@ const crafts = ref([
           "decorated cake",
         ],
       },
+      {
+        name: "cabernet vines",
+        cost: 3500,
+        imgSrc: "Farm/icon_cabernetVines.png",
+        produces: [
+          {
+            item: "Cabernet Grapes",
+            icon: "icon_cabernetGrapes",
+            cookTime: [420, 840, 1680, 3360],
+            ingredients: [
+              {
+                icon: "icon_cabernetGrapes",
+                item: "Peppermint",
+                qty: 5,
+              },
+              {
+                icon: "icon_sugar",
+                item: "Sugar",
+                qty: 3,
+              },
+              {
+                icon: "icon_energy",
+                item: "Energy",
+                qty: 5,
+              },
+            ],
+            prizes: {
+              cash: 31700,
+              star: 1800,
+            },
+          },
+        ],
+        otherInfo: [
+          {
+            title: "name",
+            value: "Canernet Vines",
+          },
+          {
+            title: "building cost",
+            value: "3,500$",
+          },
+          {
+            title: "destroy cost",
+            value: "875$",
+          },
+          {
+            title: "build requirements",
+            value: "Lumber x1",
+          },
+          {
+            title: "Shade",
+            value: "None",
+          },
+          {
+            title: "stores in",
+            value: "Silo",
+          },
+          {
+            title: "affected by",
+            value: "Shade",
+          },
+          {
+            title: "requires road",
+            value: "No",
+          },
+        ],
+        keywords: ["vine", "vines", "cabernet vines"],
+      },
+      {
+        name: "chardonnay vines",
+        cost: 1500,
+        imgSrc: "Farm/icon_chardonnayVines.png",
+        produces: [
+          {
+            item: "chardonnay Grapes",
+            icon: "icon_chardonnayGrapes",
+            cookTime: [360, 720, 1440, 2880],
+            ingredients: [
+              {
+                icon: "icon_chardonnayGrapes",
+                item: "Peppermint",
+                qty: 5,
+              },
+              {
+                icon: "icon_sugar",
+                item: "Sugar",
+                qty: 3,
+              },
+              {
+                icon: "icon_energy",
+                item: "Energy",
+                qty: 5,
+              },
+            ],
+            prizes: {
+              cash: 31700,
+              star: 1800,
+            },
+          },
+        ],
+        otherInfo: [
+          {
+            title: "name",
+            value: "Chardonnay Vines",
+          },
+          {
+            title: "building cost",
+            value: "1,500$",
+          },
+          {
+            title: "destroy cost",
+            value: "375$",
+          },
+          {
+            title: "build requirements",
+            value: "Lumber x1",
+          },
+          {
+            title: "Shade",
+            value: "None",
+          },
+          {
+            title: "stores in",
+            value: "Silo",
+          },
+          {
+            title: "affected by",
+            value: "Shade",
+          },
+          {
+            title: "requires road",
+            value: "No",
+          },
+        ],
+        keywords: ["vine", "vines", "chardonnay vines"],
+      },
+      {
+        name: "cocoa tree",
+        cost: 2500,
+        imgSrc: "Farm/icon_cocoaTree.png",
+        produces: [
+          {
+            item: "Cocoa",
+            icon: "icon_cocoa",
+            cookTime: [60, 120, 240, 480],
+            ingredients: [
+              {
+                icon: "icon_cocoa",
+                item: "Peppermint",
+                qty: 5,
+              },
+              {
+                icon: "icon_sugar",
+                item: "Sugar",
+                qty: 3,
+              },
+              {
+                icon: "icon_energy",
+                item: "Energy",
+                qty: 5,
+              },
+            ],
+            prizes: {
+              cash: 31700,
+              star: 1800,
+            },
+          },
+        ],
+        otherInfo: [
+          {
+            title: "name",
+            value: "Cocoa Tree",
+          },
+          {
+            title: "building cost",
+            value: "2,500$",
+          },
+          {
+            title: "destroy cost",
+            value: "625$",
+          },
+          {
+            title: "build requirements",
+            value: "Lumber x1",
+          },
+          {
+            title: "Shade",
+            value: "None",
+          },
+          {
+            title: "stores in",
+            value: "Silo",
+          },
+          {
+            title: "affected by",
+            value: "Shade",
+          },
+          {
+            title: "requires road",
+            value: "No",
+          },
+        ],
+        keywords: ["cocoa", "tree", "cocoa tree"],
+      },
+      {
+        name: "cotton field",
+        cost: 250,
+        imgSrc: "Farm/icon_cottonField.png",
+        produces: [
+          {
+            item: "Cotton",
+            icon: "icon_cotton",
+            cookTime: [20, 40, 80, 160],
+            ingredients: [
+              {
+                icon: "icon_water",
+                item: "Water",
+                qty: 4,
+              },
+            ],
+            prizes: {
+              cash: 31700,
+              star: 1800,
+            },
+          },
+        ],
+        otherInfo: [
+          {
+            title: "name",
+            value: "Cotton Field",
+          },
+          {
+            title: "building cost",
+            value: "250$",
+          },
+          {
+            title: "destroy cost",
+            value: "63$",
+          },
+          {
+            title: "build requirements",
+            value: "None",
+          },
+          {
+            title: "Shade",
+            value: "None",
+          },
+          {
+            title: "stores in",
+            value: "Silo",
+          },
+          {
+            title: "affected by",
+            value: "Shade",
+          },
+          {
+            title: "requires road",
+            value: "No",
+          },
+        ],
+        keywords: ["cotton", "cotton field"],
+      },
+      {
+        name: "farm house",
+        cost: 1250,
+        imgSrc: "Farm/icon_farmHouse.png",
+        otherInfo: [
+          {
+            title: "name",
+            value: "Farm House",
+          },
+          {
+            title: "building cost",
+            value: "1,250$",
+          },
+          {
+            title: "destroy cost",
+            value: "313$",
+          },
+          {
+            title: "Lobor Cost",
+            value: "10$/Min",
+          },
+          {
+            title: "build requirements",
+            value: "Wood x1",
+          },
+          {
+            title: "Shade",
+            value: "2x2",
+          },
+          {
+            title: "stores in",
+            value: "None",
+          },
+          {
+            title: "affected by",
+            value: "None",
+          },
+          {
+            title: "requires road",
+            value: "Yes",
+          },
+        ],
+        keywords: ["farm", "farm house"],
+      },
+      {
+        name: "farm tractor",
+        cost: 75000,
+        imgSrc: "Farm/icon_farmTractor.png",
+        otherInfo: [
+          {
+            title: "name",
+            value: "Farm Tractor",
+          },
+          {
+            title: "building cost",
+            value: "75,000$",
+          },
+          {
+            title: "destroy cost",
+            value: "313$",
+          },
+          {
+            title: "Lobor Cost",
+            value: "150$/Min",
+          },
+          {
+            title: "build requirements",
+            value: "Lumber x5, Wood x5, Energy x5",
+          },
+          {
+            title: "Shade",
+            value: "2x2",
+          },
+          {
+            title: "stores in",
+            value: "None",
+          },
+          {
+            title: "affected by",
+            value: "None",
+          },
+          {
+            title: "requires road",
+            value: "Yes",
+          },
+        ],
+        keywords: ["farm", "farm house", "farm tractor"],
+      },
+      {
+        name: "Lumber Yard",
+        cost: 20000,
+        imgSrc: "Farm/icon_lumberYard.png",
+        otherInfo: [
+          {
+            title: "name",
+            value: "Lumber Yard",
+          },
+          {
+            title: "building cost",
+            value: "20,000$",
+          },
+          {
+            title: "destroy cost",
+            value: "5,000$",
+          },
+          {
+            title: "Lobor Cost",
+            value: "None",
+          },
+          {
+            title: "build requirements",
+            value: "Wood x5",
+          },
+          {
+            title: "Shade",
+            value: "1x1",
+          },
+          {
+            title: "stores in",
+            value: "None",
+          },
+          {
+            title: "affected by",
+            value: "None",
+          },
+          {
+            title: "requires road",
+            value: "Yes",
+          },
+        ],
+        keywords: ["lumber", "lumber yard"],
+      },
+      {
+        name: " Lumberjack House",
+        cost: 2500,
+        imgSrc: "Farm/icon_lumberjackHouse.png",
+        otherInfo: [
+          {
+            title: "name",
+            value: "Lumberjack House",
+          },
+          {
+            title: "building cost",
+            value: "2,500$",
+          },
+          {
+            title: "destroy cost",
+            value: "625$",
+          },
+          {
+            title: "Lobor Cost",
+            value: "30$/Min",
+          },
+          {
+            title: "build requirements",
+            value: "None",
+          },
+          {
+            title: "Shade",
+            value: "2x2",
+          },
+          {
+            title: "stores in",
+            value: "None",
+          },
+          {
+            title: "affected by",
+            value: "None",
+          },
+          {
+            title: "requires road",
+            value: "Yes",
+          },
+        ],
+        keywords: ["wood", "lumberjack", "lumberjack house"],
+      },
+      {
+        name: "Peppermint Field",
+        cost: 2500,
+        imgSrc: "Farm/icon_peppermintField.png",
+        produces: [
+          {
+            item: "Peppermint",
+            icon: "icon_peppermint",
+            cookTime: [180, 360, 720, 1440],
+            ingredients: [
+              {
+                icon: "icon_chardonnayGrapes",
+                item: "Peppermint",
+                qty: 5,
+              },
+              {
+                icon: "icon_sugar",
+                item: "Sugar",
+                qty: 3,
+              },
+              {
+                icon: "icon_energy",
+                item: "Energy",
+                qty: 5,
+              },
+            ],
+            prizes: {
+              cash: 31700,
+              star: 1800,
+            },
+          },
+        ],
+        otherInfo: [
+          {
+            title: "name",
+            value: "Peppermint Field",
+          },
+          {
+            title: "building cost",
+            value: "2,500$",
+          },
+          {
+            title: "destroy cost",
+            value: "625$",
+          },
+          {
+            title: "Lobor Cost",
+            value: "None",
+          },
+          {
+            title: "build requirements",
+            value: "Wood x3",
+          },
+          {
+            title: "Shade",
+            value: "None",
+          },
+          {
+            title: "stores in",
+            value: "Silo",
+          },
+          {
+            title: "affected by",
+            value: "Shade",
+          },
+          {
+            title: "requires road",
+            value: "No",
+          },
+        ],
+        keywords: ["peppermint", "peppermint field"],
+      },
+      {
+        name: "Oak Tree Farm",
+        cost: 2500,
+        imgSrc: "Farm/icon_oakTreeFarm.png",
+        produces: [
+          {
+            item: "Oak Wood",
+            icon: "icon_oakWood",
+            cookTime: [120, 240, 480, 960],
+            ingredients: [
+              {
+                icon: "icon_water",
+                item: "Water",
+                qty: 5,
+              },
+            ],
+            prizes: {
+              cash: 31700,
+              star: 1800,
+            },
+          },
+        ],
+        otherInfo: [
+          {
+            title: "name",
+            value: "Peppermint Field",
+          },
+          {
+            title: "building cost",
+            value: "2,500$",
+          },
+          {
+            title: "destroy cost",
+            value: "625$",
+          },
+          {
+            title: "Lobor Cost",
+            value: "None",
+          },
+          {
+            title: "build requirements",
+            value: "Wood x3",
+          },
+          {
+            title: "Shade",
+            value: "None",
+          },
+          {
+            title: "stores in",
+            value: "Silo",
+          },
+          {
+            title: "affected by",
+            value: "Shade",
+          },
+          {
+            title: "requires road",
+            value: "No",
+          },
+        ],
+        keywords: ["peppermint", "peppermint field"],
+      },
     ],
   },
   {
@@ -426,8 +1025,7 @@ const crafts = ref([
             qty: 5,
           },
         ],
-        pricePerMin: 150,
-        keywords: ["atv"],
+        keywords: ["atv", "ranch house"],
       },
       {
         name: "chicken coop",
@@ -500,10 +1098,6 @@ const crafts = ref([
             title: "destroy cost",
             value: "7,500$",
           },
-          // {
-          //   title: "Labor cost",
-          //   value: '150$/Min'
-          // },
           {
             title: "build requirements",
             value: "Wood x10",
@@ -586,10 +1180,6 @@ const crafts = ref([
             title: "destroy cost",
             value: "5,000$",
           },
-          // {
-          //   title: "Labor cost",
-          //   value: '150$/Min'
-          // },
           {
             title: "build requirements",
             value: "Wood x3",
@@ -642,11 +1232,15 @@ const crafts = ref([
           },
           {
             title: "build cost",
-            value: "1000$",
+            value: "1,000$",
           },
           {
             title: "destroy cost",
-            value: "500$",
+            value: "250$",
+          },
+          {
+            title: "upgrade cost",
+            value: "29,750$",
           },
           {
             title: "shade",
@@ -706,9 +1300,79 @@ const crafts = ref([
         ],
         keywords: ["grass", "meadow"],
       },
+      {
+        name: "Paved Road",
+        cost: 30000,
+        imgSrc: "Terrain/icon_pavedRoad.png",
+        otherInfo: [
+          {
+            title: "name",
+            value: "Paved Road",
+          },
+          {
+            title: "build cost",
+            value: "30,000$",
+          },
+          {
+            title: "destroy cost",
+            value: "7,500$",
+          },
+          {
+            title: "shade",
+            value: "None",
+          },
+          {
+            title: "affected by",
+            value: "None",
+          },
+          {
+            title: "requires road",
+            value: "Yes",
+          },
+        ],
+        keywords: ["road", "paved road"],
+      },
+      {
+        name: "Pond",
+        cost: 10000,
+        imgSrc: "Terrain/icon_pond.png",
+        otherInfo: [
+          {
+            title: "name",
+            value: "Pond",
+          },
+          {
+            title: "build cost",
+            value: "10,000$",
+          },
+          {
+            title: "destroy cost",
+            value: "2,500$",
+          },
+          {
+            title: "build requirements",
+            value: "Water x10",
+          },
+          {
+            title: "water",
+            value: "2x2",
+          },
+          {
+            title: "affected by",
+            value: "None",
+          },
+          {
+            title: "requires road",
+            value: "No",
+          },
+        ],
+        keywords: ["pond", "water"],
+      },
     ],
   },
 ]);
+
+crafts.value.map((craft) => craft.items.sort((a, b) => b.cost - a.cost));
 
 provide("crafts", crafts);
 </script>
