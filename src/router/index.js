@@ -16,7 +16,10 @@ const router = createRouter({
       props: true,
       component: BuildingInfo
     }
-  ]
+  ],
+  scrollBehavior() {
+    window.scrollTo({ top: 0 })
+  }
 })
 
 export default router
