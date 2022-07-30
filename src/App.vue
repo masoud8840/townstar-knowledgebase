@@ -1,36 +1,28 @@
 <template>
-  <navbar-base :class="navbarStyle"></navbar-base>
-  <button class="burger-menu" @click="onToggleNavbar">
-    <img
-      src="/public/images/Navbar/Menu.svg"
-      alt="menu-btn"
-      v-if="!navbarIsOpen"
-    />
-    <img src="/public/images/Navbar/CloseBtn.svg" alt="close-btn" v-else />
-  </button>
-  <router-view @click="toggleNavbarOff" :overflow="navbarIsOpen"></router-view>
+  <!-- <navbar-base
+    :class="{ open: navbarIsOpen }"
+    @on-toggle-off-navbar="toggleOffNavbar"
+  ></navbar-base>
+  <router-view
+    @on-navbar-toggle="toggleNavbar"
+    :navbar-state="navbarIsOpen"
+  ></router-view> -->
+
+  <router-view></router-view>
 </template>
 <script setup>
 import NavbarBase from "./components/Navbar/NavbarBase.vue";
-import { computed, ref, watch } from "vue";
+import { ref } from "vue";
 import { provide } from "vue";
-import { useRoute } from "vue-router";
 
 const navbarIsOpen = ref(false);
-const onToggleNavbar = () => {
-  navbarIsOpen.value = !navbarIsOpen.value;
+const toggleNavbar = (isOpenState) => {
+  navbarIsOpen.value = isOpenState;
 };
-const toggleNavbarOff = () => {
+
+const toggleOffNavbar = () => {
   navbarIsOpen.value = false;
 };
-const navbarStyle = computed(() => {
-  if (navbarIsOpen.value) return { open };
-  else return {};
-});
-const route = useRoute();
-watch(route, () => {
-  navbarIsOpen.value = false;
-});
 const crafts = ref([
   {
     title: "farm",
