@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import BuildingInfo from "../views/BuildingInfo.vue";
+import SomethingView from "../views/SomethingView.vue";
 
 
 const router = createRouter({
@@ -12,10 +13,18 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/:craftID',
-      props: true,
-      component: BuildingInfo
-    }
+      path: '/build',
+      component: SomethingView,
+      name: "BuildingInfo",
+      children: [
+        {
+          path: '/:craftID',
+          component: BuildingInfo,
+          props: true
+        }
+      ]
+    },
+
   ],
   scrollBehavior() {
     window.scrollTo({ top: 0 })

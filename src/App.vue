@@ -1,40 +1,63 @@
 <template>
-  <navbar-base :class="navbarStyle"></navbar-base>
-  <button class="burger-menu" @click="onToggleNavbar">
-    <img
-      src="/public/images/Navbar/Menu.svg"
-      alt="menu-btn"
-      v-if="!navbarIsOpen"
-    />
-    <img src="/public/images/Navbar/CloseBtn.svg" alt="close-btn" v-else />
-  </button>
-  <router-view @click="toggleNavbarOff" :overflow="navbarIsOpen"></router-view>
+  <router-view></router-view>
 </template>
 <script setup>
 import NavbarBase from "./components/Navbar/NavbarBase.vue";
-import { computed, ref, watch } from "vue";
+import { ref } from "vue";
 import { provide } from "vue";
-import { useRoute } from "vue-router";
 
 const navbarIsOpen = ref(false);
-const onToggleNavbar = () => {
-  navbarIsOpen.value = !navbarIsOpen.value;
+const toggleNavbar = (isOpenState) => {
+  navbarIsOpen.value = isOpenState;
 };
-const toggleNavbarOff = () => {
+
+const toggleOffNavbar = () => {
   navbarIsOpen.value = false;
 };
-const navbarStyle = computed(() => {
-  if (navbarIsOpen.value) return { open };
-  else return {};
-});
-const route = useRoute();
-watch(route, () => {
-  navbarIsOpen.value = false;
-});
 const crafts = ref([
   {
     title: "farm",
     items: [
+      {
+        name: "The Logger House",
+        cost: 75000,
+        imgSrc: "Farm/icon_theLoggerHouse.png",
+        otherInfo: [
+          {
+            title: "name",
+            value: "The Logger House",
+          },
+          {
+            title: "build cost",
+            value: "75,000$",
+          },
+          {
+            title: "destroy cost",
+            value: "18,750$",
+          },
+          {
+            title: "lobor cost",
+            value: "150$/Nin",
+          },
+          {
+            title: "build requirements",
+            value: "Lumber x5, Wood x5, Energy x5",
+          },
+          {
+            title: "Build Duration",
+            value: "60s",
+          },
+          {
+            title: "Shade",
+            value: "2x2",
+          },
+          {
+            title: "requires Road",
+            value: "Yes",
+          },
+        ],
+        keywords: ["logger house", "the logger house", "lumber"],
+      },
       {
         name: "cakery",
         cost: 1000000,
@@ -1916,6 +1939,86 @@ const crafts = ref([
         name: "Iron Mine",
         cost: 30000,
         imgSrc: "Industrial/icon_mine.png",
+        produces: [
+          {
+            item: "Iron",
+            icon: "icon_iron",
+            cookTime: [30],
+            ingredients: [
+              {
+                icon: "icon_lumber",
+                item: "Lumber",
+                qty: 1,
+              },
+              {
+                icon: "icon_energy",
+                item: "Energy",
+                qty: 1,
+              },
+              {
+                icon: "icon_waterDrum",
+                item: "Water Drum",
+                qty: 1,
+              },
+            ],
+            prizes: {
+              cash: 46000,
+              star: 550,
+            },
+          },
+          {
+            item: "Chromium",
+            icon: "icon_chromium",
+            cookTime: [60],
+            ingredients: [
+              {
+                icon: "icon_lumber",
+                item: "Lumber",
+                qty: 1,
+              },
+              {
+                icon: "icon_energy",
+                item: "Energy",
+                qty: 3,
+              },
+              {
+                icon: "icon_waterDrum",
+                item: "Water Drum",
+                qty: 2,
+              },
+            ],
+            prizes: {
+              cash: 46000,
+              star: 550,
+            },
+          },
+          {
+            item: "Limestone",
+            icon: "icon_limestone",
+            cookTime: [60],
+            ingredients: [
+              {
+                icon: "icon_lumber",
+                item: "Lumber",
+                qty: 1,
+              },
+              {
+                icon: "icon_energy",
+                item: "Energy",
+                qty: 3,
+              },
+              {
+                icon: "icon_waterDrum",
+                item: "Water Drum",
+                qty: 2,
+              },
+            ],
+            prizes: {
+              cash: 46000,
+              star: 550,
+            },
+          },
+        ],
         otherInfo: [
           {
             title: "name",
@@ -1938,8 +2041,12 @@ const crafts = ref([
             value: "Lumber x5, Wood x5, Energy x5",
           },
           {
+            title: "Build Duration",
+            value: "60s",
+          },
+          {
             title: "Pollution",
-            value: "3x3",
+            value: "2x2",
           },
           {
             title: "Stores in",
@@ -1950,7 +2057,7 @@ const crafts = ref([
             value: "None",
           },
           {
-            title: "requires road",
+            title: "requires Paved Road",
             value: "Yes",
           },
           {
@@ -1958,20 +2065,7 @@ const crafts = ref([
             value: "Yes",
           },
         ],
-        produces: [
-          {
-            item: "Iron",
-            icon: "icon_iron",
-            cookTime: [30, 60, 120, 240],
-            ingredients: [
-              {
-                icon: "icon_lumber",
-                item: "Lumber",
-                qty: 1,
-              },
-            ],
-          },
-        ],
+        keywords: ["mine", "iron mine", "iron", "chromium", "limestone"],
       },
     ],
   },

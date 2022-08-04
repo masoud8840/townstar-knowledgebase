@@ -14,6 +14,7 @@
       v-model="searchedText"
       @input="onSearchCrafts"
     />
+    <slot></slot>
     <div class="category-tags__container">
       <category-tag
         v-for="(tag, index) in categories"
@@ -36,6 +37,7 @@
         :name="item.name"
         :cost="item.cost"
         :img-src="item.imgSrc"
+        @click="onToggleOffNavbar"
       ></category-item>
     </div>
   </nav>
@@ -43,8 +45,12 @@
 <script setup>
 import CategoryTag from "./CategoryTag.vue";
 import CategoryItem from "./CategoryItem.vue";
-import { computed, ref, inject, watch } from "vue";
+import { computed, ref, inject } from "vue";
 
+const emits = defineEmits(["onToggleOffNavbar"]);
+const onToggleOffNavbar = () => {
+  emits("onToggleOffNavbar", false);
+};
 // Tags category
 const currentTag = ref("");
 const onTagChange = (name) => {

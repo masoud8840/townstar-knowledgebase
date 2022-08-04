@@ -1,5 +1,16 @@
 <template>
-  <div class="building-info__container" :class="hideBackDrop">
+  <div class="building-info__container">
+    <header class="building-info__header">
+      <h2>{{ currentCraft.name }}</h2>
+      <button @click="onMenuBtnToggle">
+        <img
+          src="/public/images/Navbar/Menu.svg"
+          alt="menu-btn"
+          v-if="!menuIsOpen"
+        />
+        <img src="/public/images/Navbar/CloseBtn.svg" alt="close-btn" v-else />
+      </button>
+    </header>
     <img
       :src="`/public/images/TownStar/${currentCraft.imgSrc}`"
       alt="building-img"
@@ -26,12 +37,12 @@
 </template>
 
 <script setup>
-import { computed, inject } from "vue";
+import { computed, inject, ref, watch } from "vue";
 import OutputCard from "../components/Buildings/OutputCard.vue";
 
-const props = defineProps(["craftID", "overflow"]);
+const emits = defineEmits(["onNavbarToggle"]);
+const props = defineProps(["craftID", "navbar-state"]);
 const crafts = inject("crafts");
-
 const currentCraft = computed(() => {
   let foundItem = {};
   crafts.value.map((craft) =>
@@ -42,8 +53,13 @@ const currentCraft = computed(() => {
   return foundItem;
 });
 
-const hideBackDrop = computed(() => {
-  if (props.overflow) return { hideBackDrop };
-  else return {};
+const menuIsOpen = ref(false);
+
+const onMenuBtnToggle = () => {
+  menuIsOpen.value = !menuIsOpen.value;
+  emits("onNavbarToggle", menuIsOpen.value);
+};
+watch(props, (newVal) => {
+  menuIsOpen.value = newVal.navbarState;
 });
 </script>

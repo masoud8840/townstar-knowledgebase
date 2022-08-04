@@ -14,7 +14,7 @@
   scroll-behavior: smooth;
 }
 
-#app {
+.something-view__container {
   display: grid;
   grid-template-columns: 380px auto;
   gap: 25px;
@@ -198,6 +198,32 @@
     background-color: #f4f4f4;
     display: flex;
     flex-direction: column;
+    .building-info__header {
+      padding: 10px 20px;
+      position: fixed;
+      background-color: transparent;
+      backdrop-filter: blur(2px);
+      box-shadow: 0 8px 10px -8px #ccc;
+      width: 100%;
+      display: none;
+      justify-content: space-between;
+      h2 {
+        background: linear-gradient(45deg, #e24534, #ed6846);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font: 700 21px "Poppins";
+        text-transform: capitalize;
+      }
+      button {
+        background-color: transparent;
+        border-radius: 3px;
+        border: 0;
+        cursor: pointer;
+        * {
+          pointer-events: none;
+        }
+      }
+    }
 
     .building__img {
       margin: 0 auto;
@@ -225,6 +251,7 @@
           background-color: var(--yellow);
           color: var(--red);
           padding: 10px;
+          text-transform: capitalize;
         }
 
         .output-card__product {
@@ -325,7 +352,7 @@
 }
 
 @media (max-width: 960px) {
-  #app {
+  .something-view__container {
     grid-template-columns: 1fr;
     nav {
       // display: none;
@@ -345,6 +372,9 @@
       &.hideBackDrop {
         overflow: hidden;
         height: 100vh;
+      }
+      .building-info__header {
+        display: flex;
       }
     }
 
