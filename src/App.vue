@@ -1626,8 +1626,385 @@ const crafts = ref([
       },
     ],
   },
+
+  {
+    title: "industrial",
+    items: [
+      {
+        name: "builder house",
+        cost: 2500,
+        imgSrc: "Industrial/icon_builderHouse.png",
+        otherInfo: [
+          {
+            title: "name",
+            value: "Builder House",
+          },
+          {
+            title: "build cost",
+            value: "2,500$",
+          },
+          {
+            title: "destroy cost",
+            value: "625$",
+          },
+          {
+            title: "Labor cost",
+            value: "20$/min",
+          },
+          {
+            title: "build requirements",
+            value: "None",
+          },
+          {
+            title: "Shade",
+            value: "2x2",
+          },
+          {
+            title: "stores in",
+            value: "None",
+          },
+          {
+            title: "affected by",
+            value: "None",
+          },
+          {
+            title: "requires road",
+            value: "No",
+          },
+        ],
+        keywords: ["builder", "builder house"],
+      },
+      {
+        name: "Fabric plant",
+        cost: 500000,
+        imgSrc: "Industrial/icon_fabricPlant.png",
+        otherInfo: [
+          {
+            title: "name",
+            value: "Fabric Plant",
+          },
+          {
+            title: "build cost",
+            value: "500,000$",
+          },
+          {
+            title: "destroy cost",
+            value: "125,000$",
+          },
+          {
+            title: "lobor cost",
+            value: "500$/Min",
+          },
+          {
+            title: "build requirements",
+            value: "Lumber x10, Wood x10, Energy x10",
+          },
+          {
+            title: "Shade",
+            value: "2x2",
+          },
+          {
+            title: "Pollution",
+            value: "2x2",
+          },
+          {
+            title: "Stores in",
+            value: "Ware House",
+          },
+          {
+            title: "affected by",
+            value: "None",
+          },
+          {
+            title: "requires paved road",
+            value: "Yes",
+          },
+        ],
+        keywords: [
+          "fabric",
+          "fabric plant",
+          "wool",
+          "cotton",
+          "wool yarn",
+          "cotton yarn",
+          "uniforms",
+        ],
+      },
+      {
+        name: "forklift",
+        cost: 75000,
+        imgSrc: "Industrial/icon_forklift.png",
+        otherInfo: [
+          {
+            title: "name",
+            value: "Forklift",
+          },
+          {
+            title: "build cost",
+            value: "75,000$",
+          },
+          {
+            title: "destroy cost",
+            value: "18,750$",
+          },
+          {
+            title: "lobor cost",
+            value: "150$/Min",
+          },
+          {
+            title: "build requirements",
+            value: "Lumber x5, Wood x5, Energy x5",
+          },
+          {
+            title: "Shade",
+            value: "2x2",
+          },
+          {
+            title: "Pollution",
+            value: "2x2",
+          },
+          {
+            title: "Stores in",
+            value: "Ware House",
+          },
+          {
+            title: "affected by",
+            value: "None",
+          },
+          {
+            title: "requires road",
+            value: "Yes",
+          },
+        ],
+        keywords: ["forklift"],
+      },
+      {
+        name: "Fuel Storage",
+        cost: 15000,
+        imgSrc: "Industrial/icon_fuelStorage.png",
+        otherInfo: [
+          {
+            title: "name",
+            value: "Fuel Storage",
+          },
+          {
+            title: "build cost",
+            value: "15,000$",
+          },
+          {
+            title: "destroy cost",
+            value: "3,750$",
+          },
+          {
+            title: "lobor cost",
+            value: "None",
+          },
+          {
+            title: "build requirements",
+            value: "Wood x5",
+          },
+          {
+            title: "Pollution",
+            value: "3x3",
+          },
+          {
+            title: "Stores in",
+            value: "None",
+          },
+          {
+            title: "affected by",
+            value: "None",
+          },
+          {
+            title: "requires road",
+            value: "Yes",
+          },
+        ],
+        keywords: ["fuel storage", "petroleum", "jet fuel", "gasoline"],
+      },
+      {
+        name: "Glass Factory",
+        cost: 100000,
+        imgSrc: "Industrial/icon_glassFactory.png",
+        otherInfo: [
+          {
+            title: "name",
+            value: "Glass Factory",
+          },
+          {
+            title: "build cost",
+            value: "100,000$",
+          },
+          {
+            title: "destroy cost",
+            value: "25,000$",
+          },
+          {
+            title: "lobor cost",
+            value: "750$/Nin",
+          },
+          {
+            title: "build requirements",
+            value: "Iron x2, Lumber x2, Energy x10",
+          },
+          {
+            title: "Shade",
+            value: "2x2",
+          },
+          {
+            title: "Pollution",
+            value: "2x2",
+          },
+          {
+            title: "Stores in",
+            value: "None",
+          },
+          {
+            title: "affected by",
+            value: "Pollution",
+          },
+          {
+            title: "requires road",
+            value: "Yes",
+          },
+        ],
+      },
+      {
+        name: "Lumber Mill",
+        cost: 50000,
+        imgSrc: "Industrial/icon_lumberMill.png",
+        otherInfo: [
+          {
+            title: "name",
+            value: "Lumber Mill",
+          },
+          {
+            title: "build cost",
+            value: "50,000$",
+          },
+          {
+            title: "destroy cost",
+            value: "12,500$",
+          },
+          {
+            title: "lobor cost",
+            value: "100$/Nin",
+          },
+          {
+            title: "build requirements",
+            value: "Wood x5",
+          },
+          {
+            title: "Shade",
+            value: "2x2",
+          },
+          {
+            title: "Stores in",
+            value: "Lumber Yard, Wood Shed",
+          },
+          {
+            title: "affected by",
+            value: "None",
+          },
+          {
+            title: "requires road",
+            value: "Yes",
+          },
+        ],
+      },
+      {
+        name: "Iron Mine",
+        cost: 30000,
+        imgSrc: "Industrial/icon_mine.png",
+        otherInfo: [
+          {
+            title: "name",
+            value: "Iron Mine",
+          },
+          {
+            title: "build cost",
+            value: "30,000$",
+          },
+          {
+            title: "destroy cost",
+            value: "7,500$",
+          },
+          {
+            title: "lobor cost",
+            value: "100$/Nin",
+          },
+          {
+            title: "build requirements",
+            value: "Lumber x5, Wood x5, Energy x5",
+          },
+          {
+            title: "Pollution",
+            value: "3x3",
+          },
+          {
+            title: "Stores in",
+            value: "Ware House",
+          },
+          {
+            title: "affected by",
+            value: "None",
+          },
+          {
+            title: "requires road",
+            value: "Yes",
+          },
+          {
+            title: "requires mountain",
+            value: "Yes",
+          },
+        ],
+        produces: [
+          {
+            item: "Iron",
+            icon: "icon_iron",
+            cookTime: [30, 60, 120, 240],
+            ingredients: [
+              {
+                icon: "icon_lumber",
+                item: "Lumber",
+                qty: 1,
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
 ]);
 
+// produces: [
+//           {
+//             item: "Peppermint",
+//             icon: "icon_peppermint",
+//             cookTime: [180, 360, 720, 1440],
+//             ingredients: [
+//               {
+//                 icon: "icon_chardonnayGrapes",
+//                 item: "Peppermint",
+//                 qty: 5,
+//               },
+//               {
+//                 icon: "icon_sugar",
+//                 item: "Sugar",
+//                 qty: 3,
+//               },
+//               {
+//                 icon: "icon_energy",
+//                 item: "Energy",
+//                 qty: 5,
+//               },
+//             ],
+//             prizes: {
+//               cash: 31700,
+//               star: 1800,
+//             },
+//           },
+//         ],
 crafts.value.map((craft) => craft.items.sort((a, b) => b.cost - a.cost));
 
 provide("crafts", crafts);

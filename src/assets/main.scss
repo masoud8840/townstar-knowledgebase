@@ -18,6 +18,7 @@
   display: grid;
   grid-template-columns: 380px auto;
   gap: 25px;
+  align-items: flex-start;
   .burger-menu {
     position: fixed;
     border: 0;
