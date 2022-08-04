@@ -1,17 +1,7 @@
 <template>
-  <!-- <navbar-base
-    :class="{ open: navbarIsOpen }"
-    @on-toggle-off-navbar="toggleOffNavbar"
-  ></navbar-base>
-  <router-view
-    @on-navbar-toggle="toggleNavbar"
-    :navbar-state="navbarIsOpen"
-  ></router-view> -->
-
   <router-view></router-view>
 </template>
 <script setup>
-import NavbarBase from "./components/Navbar/NavbarBase.vue";
 import { ref } from "vue";
 import { provide } from "vue";
 
@@ -19,7 +9,6 @@ const navbarIsOpen = ref(false);
 const toggleNavbar = (isOpenState) => {
   navbarIsOpen.value = isOpenState;
 };
-
 const toggleOffNavbar = () => {
   navbarIsOpen.value = false;
 };
@@ -1030,6 +1019,50 @@ const crafts = ref([
           },
         ],
         keywords: ["peppermint", "peppermint field"],
+      },
+      {
+        name: "Store House",
+        cost: 15000,
+        imgSrc: "Farm/icon_storeHouse.png",
+        // nothing to produce
+        otherInfo: [
+          {
+            title: "name",
+            value: "Store House",
+          },
+          {
+            title: "build cost",
+            value: "15,000$",
+          },
+          {
+            title: "destroy cost",
+            value: "3,750$",
+          },
+          {
+            title: "Lobor Cost",
+            value: "None",
+          },
+          {
+            title: "build requirements",
+            value: "Wood x3",
+          },
+          {
+            title: "Shade",
+            value: "None",
+          },
+          {
+            title: "stores in",
+            value: "None",
+          },
+          {
+            title: "affected by",
+            value: "None",
+          },
+          {
+            title: "requires road",
+            value: "Yes",
+          },
+        ],
       },
     ],
   },

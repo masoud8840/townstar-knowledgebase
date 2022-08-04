@@ -50,6 +50,10 @@ const currentCraft = computed(() => {
       if (item.name === props.craftID) foundItem = item;
     })
   );
+  if (Object.keys(foundItem).length === 0) {
+    // Redirect to not found route
+    console.log("Redirecting ....");
+  }
   return foundItem;
 });
 
