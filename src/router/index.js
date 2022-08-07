@@ -18,7 +18,7 @@ const router = createRouter({
       name: "BuildingInfo",
       children: [
         {
-          path: '/:craftID',
+          path: ':craftID',
           component: BuildingInfo,
           props: true
         }

@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="`/${props.name}`" class="cat-item__container">
+  <router-link :to="`/build/${props.name}`" class="cat-item__container">
     <img
       :src="`/public/images/TownStar/${props.imgSrc}`"
       alt="cat-item__icon"
