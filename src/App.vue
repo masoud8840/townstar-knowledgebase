@@ -1946,6 +1946,143 @@ const crafts = ref([
     //   keywords: ["cakery", "jam", "butter", "baguette"],
     // },
   },
+  {
+    title: "trade",
+    items: [
+      {
+        name: "freight pier",
+        cost: 250000,
+        imgSrc: "Trade/icon_freightPier.png",
+        otherInfo: [
+          {
+            title: "name",
+            value: "Freight Pier",
+          },
+          {
+            title: "build cost",
+            value: "$250,000",
+          },
+          {
+            title: "destroy cost",
+            value: "$62,500",
+          },
+          {
+            title: "lobor cost",
+            value: "$300/Min",
+          },
+          {
+            title: "build Materials",
+            value: "5x Lumber, 5x Wood, 5x Energy",
+          },
+          {
+            title: "Build Duration",
+            value: "60s",
+          },
+          {
+            title: "Pollution",
+            value: "3x3",
+          },
+          {
+            title: "Supply",
+            value: "x100",
+          },
+          {
+            title: "requires waterway or bridge",
+            value: "Yes",
+          },
+        ],
+        keywords: ["freight pier", "trade"],
+      },
+      {
+        name: "trade depot",
+        cost: 5000,
+        imgSrc: "Trade/icon_tradeDepot.png",
+        otherInfo: [
+          {
+            title: "name",
+            value: "Trade Depot",
+          },
+          {
+            title: "build cost",
+            value: "$5,000",
+          },
+          {
+            title: "destroy cost",
+            value: "$1,250",
+          },
+          {
+            title: "lobor cost",
+            value: "$20/Min",
+          },
+          {
+            title: "build Materials",
+            value: "5x Wood",
+          },
+          {
+            title: "Build Duration",
+            value: "16s",
+          },
+          {
+            title: "Pollution",
+            value: "1x1",
+          },
+          {
+            title: "Supply",
+            value: "x10",
+          },
+          {
+            title: "requires open world or bridge",
+            value: "Yes",
+          },
+        ],
+        keywords: ["trade depot", "trade"],
+      },
+      {
+        name: "trade pier",
+        cost: 7500,
+        imgSrc: "Trade/icon_tradePier.png",
+        otherInfo: [
+          {
+            title: "name",
+            value: "Trade Pier",
+          },
+          {
+            title: "build cost",
+            value: "$7,500",
+          },
+          {
+            title: "destroy cost",
+            value: "$1,875",
+          },
+          {
+            title: "lobor cost",
+            value: "$30/Min",
+          },
+          {
+            title: "build Materials",
+            value: "5x Wood",
+          },
+          {
+            title: "Build Duration",
+            value: "16s",
+          },
+          {
+            title: "Pollution",
+            value: "2x2",
+          },
+          {
+            title: "Supply",
+            value: "x10",
+          },
+          {
+            title: "requires waterway or bridge",
+            value: "Yes",
+          },
+        ],
+        keywords: ["trade pier", "trade"],
+      },
+    ],
+  },
 ]);
 
 // produces: [
