@@ -54,6 +54,15 @@ const currentCraft = computed(() => {
     // Redirect to not found route
     console.log("Redirecting ....");
   }
+
+  // changing document title by which building selected
+  let craftName = foundItem.name;
+  const nameArr = craftName.split(" ");
+  for (var i = 0; i < nameArr.length; i++) {
+    nameArr[i] = nameArr[i].charAt(0).toUpperCase() + nameArr[i].slice(1);
+  }
+  craftName = nameArr.join(" ");
+  document.title = `Building - ${craftName}`;
   return foundItem;
 });
 
