@@ -881,7 +881,7 @@ const crafts = ref([
         produces: [
           {
             item: "oak tree",
-            icon: "icon_oakTree",
+            icon: "icon_oakWood",
             cookTime: [120],
             ingredients: [
               {
@@ -1627,6 +1627,10 @@ const crafts = ref([
             value: "Pollution",
           },
           {
+            title: "stores in",
+            value: "Ware House",
+          },
+          {
             title: "requires road",
             value: "No",
           },
@@ -1911,71 +1915,663 @@ const crafts = ref([
         keywords: ["wood shed"],
       },
     ],
-    // {
-    //   name: "cakery",
-    //   cost: 1000000,
-    //   imgSrc: "Farm/icon_cakery.png",
-    //   produces: [
-    //     {
-    //       item: "Butter",
-    //       icon: "icon_butter",
-    //       cookTime: [30],
-    //       ingredients: [
-    //         {
-    //           icon: "icon_milk",
-    //           item: "Milk",
-    //           qty: 2,
-    //         },
-    //         {
-    //           icon: "icon_salt",
-    //           item: "Salt",
-    //           qty: 2,
-    //         },
-    //         {
-    //           icon: "icon_sugar",
-    //           item: "Sugar",
-    //           qty: 1,
-    //         },
-    //       ],
-    //       prizes: {
-    //         cash: 31700,
-    //         star: 1800,
-    //       },
-    //     },
-    //   ],
-    //   keywords: ["cakery", "jam", "butter", "baguette"],
-    // },
+  },
+  {
+    title: "ranch",
+    items: [
+      {
+        name: "ATV",
+        cost: 75000,
+        imgSrc: "Ranch/icon_atv.png",
+        otherInfo: [
+          {
+            title: "name",
+            value: "ATV",
+          },
+          {
+            title: "build cost",
+            value: "$75,000",
+          },
+          {
+            title: "destroy cost",
+            value: "$18,750",
+          },
+          {
+            title: "lobor cost",
+            value: "$150/Min",
+          },
+          {
+            title: "build Materials",
+            value: "5x Lumber, 5x Wood, 5x Energy ",
+          },
+          {
+            title: "Build Duration",
+            value: "60s",
+          },
+          {
+            title: "Shade",
+            value: "1x1",
+          },
+          {
+            title: "requires Road",
+            value: "Yes",
+          },
+        ],
+        keywords: ["atv"],
+      },
+      {
+        name: "beekeeper",
+        cost: 7500,
+        imgSrc: "Ranch/icon_beekeeper.png",
+        otherInfo: [
+          {
+            title: "name",
+            value: "Beekeeper",
+          },
+          {
+            title: "build cost",
+            value: "$7,500",
+          },
+          {
+            title: "destroy cost",
+            value: "$1,875",
+          },
+          {
+            title: "lobor cost",
+            value: "$150/Min",
+          },
+          {
+            title: "build Materials",
+            value: "5x Wood",
+          },
+          {
+            title: "Build Duration",
+            value: "16s",
+          },
+          {
+            title: "Shade & pollution",
+            value: "1x1",
+          },
+          {
+            title: "requires Road",
+            value: "Yes",
+          },
+        ],
+        keywords: ["beekeeper"],
+      },
+      {
+        name: "beehive",
+        cost: 25000,
+        imgSrc: "Ranch/icon_beehive.png",
+        produces: [
+          {
+            item: "honey",
+            icon: "icon_honey",
+            cookTime: [60],
+            ingredients: [
+              {
+                icon: "icon_nectar",
+                item: "Nectar",
+                qty: 3,
+              },
+              {
+                icon: "icon_lumber",
+                item: "lumber",
+                qty: 1,
+              },
+              {
+                icon: "icon_ceramic bowl",
+                item: "ceramic bowl",
+                qty: 1,
+              },
+            ],
+            prizes: {
+              cash: "None",
+              star: "None",
+            },
+          },
+          {
+            item: "honeycomb",
+            icon: "icon_honeycomb",
+            cookTime: [120],
+            ingredients: [
+              {
+                icon: "icon_nectar",
+                item: "Nectar",
+                qty: 6,
+              },
+              {
+                icon: "icon_lumber",
+                item: "lumber",
+                qty: 2,
+              },
+              {
+                icon: "icon_ceramic bowl",
+                item: "ceramic bowl",
+                qty: 1,
+              },
+            ],
+            prizes: {
+              cash: "None",
+              star: "None",
+            },
+          },
+          {
+            item: "wax",
+            icon: "icon_wax",
+            cookTime: [60],
+            ingredients: [
+              {
+                icon: "icon_nectar",
+                item: "Nectar",
+                qty: 3,
+              },
+              {
+                icon: "icon_lumber",
+                item: "lumber",
+                qty: 1,
+              },
+              {
+                icon: "icon_ceramic bowl",
+                item: "ceramic bowl",
+                qty: 1,
+              },
+            ],
+            prizes: {
+              cash: "None",
+              star: "None",
+            },
+          },
+        ],
+        otherInfo: [
+          {
+            title: "name",
+            value: "Beehive",
+          },
+          {
+            title: "build cost",
+            value: "$25,000",
+          },
+          {
+            title: "destroy cost",
+            value: "$6,250",
+          },
+          {
+            title: "build Materials",
+            value: "3x Lumber, 1x Wood",
+          },
+          {
+            title: "Build Duration",
+            value: "20s",
+          },
+          {
+            title: "affected by",
+            value: "Pollution",
+          },
+          {
+            title: "stores in",
+            value: "Pantry",
+          },
+        ],
+        keywords: ["beehive", "bee", "honey", "honeycomb", "wax"],
+      },
+      {
+        name: "feed mill",
+        cost: 5000,
+        imgSrc: "Ranch/icon_feedMill.png",
+        produces: [
+          {
+            item: "feed",
+            icon: "icon_feed",
+            cookTime: [10],
+            ingredients: [
+              {
+                icon: "icon_wheat",
+                item: "Wheat",
+                qty: 2,
+              },
+            ],
+            prizes: {
+              cash: 340,
+              star: 1,
+            },
+          },
+        ],
+        otherInfo: [
+          {
+            title: "name",
+            value: "Feed Mill",
+          },
+          {
+            title: "build cost",
+            value: "$5,000",
+          },
+          {
+            title: "destroy cost",
+            value: "$1,250",
+          },
+          {
+            title: "build Materials",
+            value: "3x Wood",
+          },
+          {
+            title: "Build Duration",
+            value: "12s",
+          },
+        ],
+        keywords: ["feed", "feed mill"],
+      },
+      {
+        name: "ranch house",
+        cost: 1250,
+        imgSrc: "Ranch/icon_ranchHouse.png",
+        otherInfo: [
+          {
+            title: "name",
+            value: "Ranch House",
+          },
+          {
+            title: "build cost",
+            value: "$1,250",
+          },
+          {
+            title: "destroy cost",
+            value: "$313",
+          },
+          {
+            title: "lobor cost",
+            value: "$10/Min",
+          },
+          {
+            title: "build Materials",
+            value: "1x Wood",
+          },
+          {
+            title: "Build Duration",
+            value: "8s",
+          },
+          {
+            title: "Shade",
+            value: "2x2",
+          },
+          {
+            title: "requires Road",
+            value: "Yes",
+          },
+        ],
+        keywords: ["ranch house"],
+      },
+      {
+        name: "sheep pen",
+        cost: 20000,
+        imgSrc: "Ranch/icon_sheepPen.png",
+        produces: [
+          {
+            item: "wool",
+            icon: "icon_wool",
+            cookTime: [60],
+            ingredients: [
+              {
+                icon: "icon_feed",
+                item: "feed",
+                qty: 8,
+              },
+              {
+                icon: "icon_water",
+                item: "water",
+                qty: 5,
+              },
+              {
+                icon: "icon_wood",
+                item: "wood",
+                qty: 1,
+              },
+            ],
+            prizes: {
+              cash: 3750,
+              star: 28,
+            },
+          },
+        ],
+        otherInfo: [
+          {
+            title: "name",
+            value: "Sheep Pen",
+          },
+          {
+            title: "build cost",
+            value: "$20,000",
+          },
+          {
+            title: "destroy cost",
+            value: "$5,000",
+          },
+          {
+            title: "build Materials",
+            value: "3x Wood",
+          },
+          {
+            title: "Build Duration",
+            value: "12s",
+          },
+          {
+            title: "affected by",
+            value: "Pollution",
+          },
+          {
+            title: "stores in",
+            value: "Store House",
+          },
+        ],
+        keywords: ["wool", "sheep", "sheep pen"],
+      },
+      {
+        name: "trough",
+        cost: 5000,
+        imgSrc: "Ranch/icon_trough.png",
+        otherInfo: [
+          {
+            title: "name",
+            value: "Trough",
+          },
+          {
+            title: "build cost",
+            value: "$5,000",
+          },
+          {
+            title: "destroy cost",
+            value: "$1,250",
+          },
+          {
+            title: "build Materials",
+            value: "1x Wood",
+          },
+          {
+            title: "Build Duration",
+            value: "8s",
+          },
+          {
+            title: "Supply",
+            value: "x5",
+          },
+        ],
+        keywords: ["trough"],
+      },
+    ],
+  },
+  {
+    title: "terrain",
+    items: [
+      {
+        name: "clay field",
+        cost: 3500,
+        imgSrc: "Terrain/icon_clayField.png",
+        produces: [
+          {
+            item: "clay lump",
+            icon: "icon_clayLump",
+            cookTime: [20],
+            ingredients: [
+              {
+                icon: "icon_water",
+                item: "Water",
+                qty: 3,
+              },
+            ],
+            prizes: {
+              cash: 300,
+              star: 3,
+            },
+          },
+        ],
+        otherInfo: [
+          {
+            title: "Name",
+            value: "Clay Field",
+          },
+          {
+            title: "Build Cost",
+            value: "$10,000",
+          },
+          {
+            title: "Destroy Cost",
+            value: "$2,500",
+          },
+          {
+            title: "Build Materials",
+            value: "None",
+          },
+          {
+            title: "Build duration",
+            value: "4s",
+          },
+          {
+            title: "affected by",
+            value: "None",
+          },
+        ],
+        keywords: ["clay field", "clay lump"],
+      },
+      {
+        name: "wild clover",
+        cost: 3500,
+        imgSrc: "Terrain/icon_wildClover.png",
+        produces: [
+          {
+            item: "nectar",
+            icon: "icon_nectar",
+            cookTime: [50],
+            prizes: {
+              cash: "None",
+              star: "None",
+            },
+          },
+        ],
+        otherInfo: [
+          {
+            title: "Name",
+            value: "Wild Clover",
+          },
+          {
+            title: "Build Cost",
+            value: "$3,500",
+          },
+          {
+            title: "Destroy Cost",
+            value: "$875",
+          },
+          {
+            title: "Build Materials",
+            value: "None",
+          },
+          {
+            title: "Build duration",
+            value: "4s",
+          },
+          {
+            title: "affected by",
+            value: "None",
+          },
+        ],
+        keywords: ["wild clover", "nectar"],
+      },
+      {
+        name: "dirty road",
+        cost: 1000,
+        imgSrc: "Terrain/icon_dirtRoad.png",
+        otherInfo: [
+          {
+            title: "Name",
+            value: "Dirty Road",
+          },
+          {
+            title: "Build Cost",
+            value: "$1,000",
+          },
+          {
+            title: "Destroy Cost",
+            value: "$250",
+          },
+          {
+            title: "Build Materials",
+            value: "None",
+          },
+          {
+            title: "Build duration",
+            value: "4s",
+          },
+          {
+            title: "upgrade cost",
+            value: "$29,000",
+          },
+          {
+            title: "upgrade materials",
+            value: "1x Lumber, 3x Wood",
+          },
+          {
+            title: "upgrade duration",
+            value: "15s",
+          },
+        ],
+        keywords: ["dirty road", "road"],
+      },
+      {
+        name: "Meadow",
+        cost: 500,
+        imgSrc: "Terrain/icon_meadow.png",
+        produces: [
+          {
+            item: "feed",
+            icon: "icon_feed",
+            cookTime: [45],
+            prizes: {
+              cash: 340,
+              star: 1,
+            },
+          },
+        ],
+        otherInfo: [
+          {
+            title: "Name",
+            value: "Meadow",
+          },
+          {
+            title: "Build Cost",
+            value: "$500",
+          },
+          {
+            title: "Destroy Cost",
+            value: "$125",
+          },
+          {
+            title: "Build Materials",
+            value: "None",
+          },
+          {
+            title: "Build duration",
+            value: "4s",
+          },
+          {
+            title: "affected by",
+            value: "None",
+          },
+        ],
+        keywords: ["meadow", "feed"],
+      },
+      {
+        name: "paved road",
+        cost: 30000,
+        imgSrc: "Terrain/icon_pavedRoad.png",
+        otherInfo: [
+          {
+            title: "Name",
+            value: "Paved Road",
+          },
+          {
+            title: "Build Cost",
+            value: "$30,000",
+          },
+          {
+            title: "Destroy Cost",
+            value: "$7,500",
+          },
+          {
+            title: "Build Materials",
+            value: "1x Lumber, 3x Wood",
+          },
+          {
+            title: "Build duration",
+            value: "15s",
+          },
+          {
+            title: "requires road",
+            value: "Yes",
+          },
+        ],
+        keywords: ["road", "paved road"],
+      },
+      {
+        name: "pond",
+        cost: 10000,
+        imgSrc: "Terrain/icon_pond.png",
+        otherInfo: [
+          {
+            title: "Name",
+            value: "Pond",
+          },
+          {
+            title: "Build Cost",
+            value: "$10,000",
+          },
+          {
+            title: "Destroy Cost",
+            value: "$2,500",
+          },
+          {
+            title: "Build Materials",
+            value: "10x Water",
+          },
+          {
+            title: "Build duration",
+            value: "4s",
+          },
+          {
+            title: "water",
+            value: "2x",
+          },
+        ],
+        keywords: ["road", "paved road"],
+      },
+    ],
   },
 ]);
-
-// produces: [
+//  produces: [
 //           {
-//             item: "Peppermint",
-//             icon: "icon_peppermint",
-//             cookTime: [180, 360, 720, 1440],
+//             item: "Butter",
+//             icon: "icon_butter",
+//             cookTime: [30],
 //             ingredients: [
 //               {
-//                 icon: "icon_chardonnayGrapes",
-//                 item: "Peppermint",
-//                 qty: 5,
+//                 icon: "icon_milk",
+//                 item: "Milk",
+//                 qty: 2,
+//               },
+//               {
+//                 icon: "icon_salt",
+//                 item: "Salt",
+//                 qty: 2,
 //               },
 //               {
 //                 icon: "icon_sugar",
 //                 item: "Sugar",
-//                 qty: 3,
-//               },
-//               {
-//                 icon: "icon_energy",
-//                 item: "Energy",
-//                 qty: 5,
+//                 qty: 1,
 //               },
 //             ],
 //             prizes: {
-//               cash: 31700,
-//               star: 1800,
+//               cash: 20000,
+//               star: 153,
 //             },
 //           },
 //         ],
-
 provide("crafts", crafts);
 </script>
