@@ -10,17 +10,19 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: HomeView,
     },
     {
       path: '/build',
       component: SomethingView,
       name: "BuildingInfo",
+      redirect: '/build/bakery',
       children: [
         {
           path: ':craftID',
           component: BuildingInfo,
-          props: true
+          name: "buildInfo",
+          props: true,
         }
       ]
     },
@@ -28,7 +30,7 @@ const router = createRouter({
   ],
   scrollBehavior() {
     window.scrollTo({ top: 0 })
-  }
-})
+  },
+});
 
 export default router
