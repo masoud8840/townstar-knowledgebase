@@ -17,5 +17,7 @@
 </template>
 
 <script setup>
-const submitNotifications = () => {};
+const submitNotifications = () => {
+  console.log("Registering... :)");
+};
 </script>

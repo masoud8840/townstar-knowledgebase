@@ -11,6 +11,7 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView,
+      meta: { title: "TownStarHelper - Home" }
     },
     {
       path: '/build',
@@ -28,28 +29,34 @@ const router = createRouter({
     },
     {
       path: "/about",
-      component: ComingSoon
+      component: ComingSoon,
+      meta: { title: "About - Coming Soon..." }
     },
     {
       path: "/contact",
-      component: ComingSoon
+      component: ComingSoon,
+      meta: { title: "Contact - Coming Soon..." }
     },
     {
       path: "/blog",
-      component: ComingSoon
+      component: ComingSoon,
+      meta: { title: "Blog - Coming Soon..." }
     },
     {
       path: "/tutorials",
-      component: ComingSoon
+      component: ComingSoon,
+      meta: { title: "Tutorials - Coming Soon..." }
     },
-    // {
-    //   path: "/:notFound(.*)*",
-    //   component: NotFound
-    // }
   ],
   scrollBehavior() {
     window.scrollTo({ top: 0 })
   },
 });
 
+router.beforeEach((to, from, next) => {
+  if (to.meta.title !== undefined) {
+    document.title = to.meta.title
+  }
+  next();
+});;
 export default router
