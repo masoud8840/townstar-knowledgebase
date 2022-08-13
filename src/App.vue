@@ -1833,6 +1833,32 @@ const crafts = ref([
               star: 350,
             },
           },
+          {
+            item: "sangria",
+            icon: "icon_sangria",
+            cookTime: [120],
+            ingredients: [
+              {
+                icon: "icon_cabernetSauvignon",
+                item: "cabernet sauvignon",
+                qty: 5,
+              },
+              {
+                icon: "icon_sugar",
+                item: "sugar",
+                qty: 2,
+              },
+              {
+                icon: "icon_strawberries",
+                item: "strawberries",
+                qty: 2,
+              },
+            ],
+            prizes: {
+              cash: "None",
+              star: "None",
+            },
+          },
         ],
         otherInfo: [
           {
@@ -3142,7 +3168,61 @@ const crafts = ref([
         keywords: ["mine", "iron", "chromium", "limestone"],
       },
 
-      // TODO: 'place nuclear power here'
+      {
+        name: "nuclear power",
+        cost: 10000000,
+        imgSrc: "Industrial/icon_nuclearPower.png",
+        produces: [
+          {
+            item: "energy",
+            icon: "icon_energy",
+            cookTime: [20],
+            prizes: {
+              cash: 150,
+              star: 1,
+            },
+          },
+        ],
+        otherInfo: [
+          {
+            title: "name",
+            value: "Nuclear Power",
+          },
+          {
+            title: "build cost",
+            value: "$10,000,000",
+          },
+          {
+            title: "destroy cost",
+            value: "$2,500,000",
+          },
+          {
+            title: "lobor cost",
+            value: "$3,000/Min",
+          },
+          {
+            title: "build Materials",
+            value: "5x Steel, 5x Iron, 5x Energy",
+          },
+          {
+            title: "Build Duration",
+            value: "120s",
+          },
+          {
+            title: "Shade",
+            value: "4x4",
+          },
+          {
+            title: "stores in",
+            value: "Ware House",
+          },
+          {
+            title: "requires paved road & Water pump",
+            value: "Yes",
+          },
+        ],
+        keywords: ["nuclear power", "energy"],
+      },
 
       {
         name: "oil pump",

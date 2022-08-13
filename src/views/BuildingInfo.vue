@@ -38,6 +38,7 @@
 
 <script setup>
 import { computed, inject, ref, watch } from "vue";
+import { useRouter } from "vue-router";
 import OutputCard from "../components/Buildings/OutputCard.vue";
 
 const emits = defineEmits(["onNavbarToggle"]);
@@ -52,17 +53,22 @@ const currentCraft = computed(() => {
   );
   if (Object.keys(foundItem).length === 0) {
     // Redirect to not found route
-    console.log("Redirecting ....");
+    const router = useRouter();
+    router.push("/build");
   }
 
   // changing document title by which building selected
-  let craftName = foundItem.name;
-  const nameArr = craftName.split(" ");
-  for (var i = 0; i < nameArr.length; i++) {
-    nameArr[i] = nameArr[i].charAt(0).toUpperCase() + nameArr[i].slice(1);
+  try {
+    let craftName = foundItem.name;
+    const nameArr = craftName.split(" ");
+    for (var i = 0; i < nameArr.length; i++) {
+      nameArr[i] = nameArr[i].charAt(0).toUpperCase() + nameArr[i].slice(1);
+    }
+    craftName = nameArr.join(" ");
+    document.title = `Building - ${craftName}`;
+  } catch (e) {
+    console.log(e.message);
   }
-  craftName = nameArr.join(" ");
-  document.title = `Building - ${craftName}`;
   return foundItem;
 });
 
