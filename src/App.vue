@@ -1996,7 +1996,7 @@ const crafts = ref([
       {
         name: "beekeeper",
         cost: 7500,
-        imgSrc: "Ranch/icon_beekeeper.png",
+        imgSrc: "Ranch/icon_beekeeperHouse.png",
         otherInfo: [
           {
             title: "name",
@@ -2054,14 +2054,14 @@ const crafts = ref([
                 qty: 1,
               },
               {
-                icon: "icon_ceramic bowl",
+                icon: "icon_ceramicBowl",
                 item: "ceramic bowl",
                 qty: 1,
               },
             ],
             prizes: {
-              cash: "None",
-              star: "None",
+              cash: 7500,
+              star: 170,
             },
           },
           {
@@ -2080,14 +2080,14 @@ const crafts = ref([
                 qty: 2,
               },
               {
-                icon: "icon_ceramic bowl",
+                icon: "icon_ceramicBowl",
                 item: "ceramic bowl",
                 qty: 1,
               },
             ],
             prizes: {
-              cash: "None",
-              star: "None",
+              cash: 1000,
+              star: 200,
             },
           },
           {
@@ -2106,14 +2106,14 @@ const crafts = ref([
                 qty: 1,
               },
               {
-                icon: "icon_ceramic bowl",
+                icon: "icon_ceramicBowl",
                 item: "ceramic bowl",
                 qty: 1,
               },
             ],
             prizes: {
-              cash: "None",
-              star: "None",
+              cash: 2000,
+              star: 170,
             },
           },
         ],
@@ -2251,14 +2251,14 @@ const crafts = ref([
                 qty: 8,
               },
               {
-                icon: "icon_water",
-                item: "water",
-                qty: 5,
-              },
-              {
                 icon: "icon_wood",
                 item: "wood",
                 qty: 1,
+              },
+              {
+                icon: "icon_water",
+                item: "water",
+                qty: 5,
               },
             ],
             prizes: {
@@ -2570,7 +2570,7 @@ const crafts = ref([
             value: "4s",
           },
           {
-            title: "water",
+            title: "water Effect",
             value: "2x",
           },
         ],
@@ -2578,7 +2578,7 @@ const crafts = ref([
       },
     ],
   },
-   {
+  {
     title: "industrial",
     items: [
       {
@@ -2654,7 +2654,7 @@ const crafts = ref([
           },
           {
             item: "wool yarn",
-            icon: "icon_woolYarn",
+            icon: "icon_yarn",
             cookTime: [60],
             ingredients: [
               {
@@ -2689,7 +2689,7 @@ const crafts = ref([
                 qty: 3,
               },
               {
-                icon: "icon_woolYarn",
+                icon: "icon_yarn",
                 item: "wool yarn",
                 qty: 1,
               },
@@ -3206,7 +3206,7 @@ const crafts = ref([
         produces: [
           {
             item: "ceramic bowl",
-            icon: "icon_crudeOil",
+            icon: "icon_ceramicBowl",
             cookTime: [150],
             ingredients: [
               {
@@ -3347,9 +3347,9 @@ const crafts = ref([
         keywords: ["power plant", "energy"],
       },
       {
-        name: "refinary",
+        name: "refinery",
         cost: 15000,
-        imgSrc: "Industrial/icon_refinary.png",
+        imgSrc: "Industrial/icon_refinery.png",
         produces: [
           {
             item: "petroleum",
@@ -3433,7 +3433,7 @@ const crafts = ref([
         otherInfo: [
           {
             title: "name",
-            value: "Refinary",
+            value: "Refinery",
           },
           {
             title: "build cost",
@@ -3472,7 +3472,7 @@ const crafts = ref([
             value: "Yes",
           },
         ],
-        keywords: ["refinary", "petroleum", "gasoline", "jet fuel"],
+        keywords: ["refinery", "petroleum", "gasoline", "jet fuel"],
       },
       {
         name: "sand mine",
@@ -3641,7 +3641,7 @@ const crafts = ref([
       {
         name: "Ware House",
         cost: 15000,
-        imgSrc: "Farm/icon_wareHouse.png",
+        imgSrc: "Industrial/icon_warehouse.png",
         otherInfo: [
           {
             title: "name",

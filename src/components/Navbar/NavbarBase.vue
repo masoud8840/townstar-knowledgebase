@@ -1,10 +1,8 @@
 <template>
   <nav>
-    <img
-      src="/images/Navbar/TownStarLogo.svg"
-      alt="townstar-logo"
-      class="town-logo"
-    />
+    <router-link to="/" class="town-logo">
+      <img src="/images/Navbar/TownStarLogo.svg" alt="townstar-logo" />
+    </router-link>
     <input
       type="text"
       id="search"

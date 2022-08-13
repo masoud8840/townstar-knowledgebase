@@ -14,10 +14,101 @@
   scroll-behavior: smooth;
   font-family: "Poppins", "sans-serif";
 }
-title {
-  text-transform: uppercase;
-}
 
+.home-view__container {
+  background: transparent url("/public/images/World.png") center / cover
+    no-repeat;
+  height: 100vh;
+  position: relative;
+
+  nav {
+    height: 80px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    ul {
+      display: flex;
+      list-style: none;
+      margin-left: auto;
+      li {
+        margin: 0 10px;
+        a {
+          text-decoration: none;
+          color: #a9a9a9;
+          text-transform: capitalize;
+          display: block;
+          padding: 7px 15px;
+          &.navbar-start-link {
+            background-color: #4fa3a5;
+            color: #e2e2e2;
+            border-radius: 5px;
+            width: 90px;
+            position: relative;
+            overflow: hidden;
+
+            img {
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              right: 15px;
+              transition: right 0.15s;
+            }
+            &:hover {
+              img {
+                right: 10px;
+              }
+            }
+          }
+          &:hover {
+            color: #fafafa;
+          }
+        }
+      }
+    }
+  }
+  .home-view__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    background-color: rgba($color: #000000, $alpha: 0.45);
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 50px;
+    section {
+      background-color: rgba($color: #000000, $alpha: 0.5);
+      color: #f4f4f4;
+      width: 100%;
+      padding: 20px;
+      border-radius: 3px;
+      h2 {
+        font: 600 32px "Poppins";
+        line-height: 2;
+        text-transform: capitalize;
+      }
+      p {
+        font: 400 16px "Poppins";
+        color: #a9a9a9;
+        line-height: 1.7;
+      }
+
+      @media (max-width: 768px) {
+        h2 {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+}
 .something-view__container {
   display: grid;
   grid-template-columns: 380px auto;
@@ -51,8 +142,10 @@ title {
     }
 
     .town-logo {
-      margin: 25px auto;
-      width: 128px;
+      img {
+        margin: 25px auto;
+        width: 128px;
+      }
     }
 
     input {
