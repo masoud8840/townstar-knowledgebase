@@ -16,13 +16,15 @@ const toggleOffNavbar = () => {
 };
 const crafts = ref([]);
 provide("crafts", crafts);
-axios
-  .get(
-    "https://townstar-knowledgebase-default-rtdb.europe-west1.firebasedatabase.app/crafts.json"
-  )
-  .then((res) => {
-    for (let i in res.data) {
-      crafts.value = JSON.parse(res.data[i].crafts);
-    }
-  });
+import craftsList from "./assets/crafts";
+crafts.value = craftsList;
+// axios
+//   .get(
+//     "https://townstar-knowledgebase-acb8d-default-rtdb.europe-west1.firebasedatabase.app/crafts.json"
+//   )
+//   .then((res) => {
+//     for (let i in res.data) {
+//       crafts.value = JSON.parse(res.data[i].crafts);
+//     }
+//   });
 </script>

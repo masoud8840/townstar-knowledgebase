@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import BuildingInfo from "../views/BuildingInfo.vue";
 import SomethingView from "../views/SomethingView.vue";
+import Contacts from "../views/Contacts.vue";
 import ComingSoon from "../views/ComingSoon.vue"
 
 const router = createRouter({
@@ -11,7 +12,7 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView,
-      meta: { title: "TownStarHelper - Home" }
+      meta: { title: "Town Star Helper - Home" }
     },
     {
       path: '/build',
@@ -34,8 +35,8 @@ const router = createRouter({
     },
     {
       path: "/contact",
-      component: ComingSoon,
-      meta: { title: "Contact - Coming Soon..." }
+      component: Contacts,
+      meta: { title: "Town Star Helper - Contact Us" }
     },
     {
       path: "/blog",
