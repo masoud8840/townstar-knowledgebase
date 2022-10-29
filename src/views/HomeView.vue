@@ -46,7 +46,7 @@
     </div>
   </div>
 
-  <!-- <dialog>
+  <dialog open v-if="isUpdateDialogOpen">
     <div class="modal-inner">
       <h3>New Update!</h3>
       <p>What did updated is listed below:</p>
@@ -56,9 +56,13 @@
         <li>Buildings List's Order.</li>
         <li>Update Popup.</li>
       </ul>
-      <p></p>
+      <p class="hint-text">
+        if you see any missmatch or have any idea about making this app better,
+        from the contact page please contact us!
+      </p>
+      <close-btn class="close-btn" @click="toggleIsUpdateDialogOpen" />
     </div>
-  </dialog> -->
+  </dialog>
 </template>
 
 <script setup>
@@ -76,7 +80,6 @@ function checkDevice() {
     isMobile.value = false;
     isNavOpen.value = true;
   }
-  console.log(isMobile.value);
 }
 
 onMounted(() => {
@@ -86,5 +89,13 @@ checkDevice();
 
 function toggleIsNavOpen() {
   isNavOpen.value = !isNavOpen.value;
+}
+const updateNitificationStatus = localStorage.getItem(
+  "updateNitificationStatus"
+);
+const isUpdateDialogOpen = ref(!updateNitificationStatus);
+function toggleIsUpdateDialogOpen() {
+  isUpdateDialogOpen.value = false;
+  localStorage.setItem("updateNitificationStatus", false);
 }
 </script>

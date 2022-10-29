@@ -98,15 +98,8 @@
       }
     }
     .close-btn {
-      cursor: pointer;
-      position: absolute;
       top: 25px;
       right: 25px;
-      &:hover {
-        path {
-          fill: var(--white);
-        }
-      }
     }
   }
   .mainNavMobileToggleBtn {
@@ -791,7 +784,6 @@
 
 // modal
 dialog {
-  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -804,12 +796,14 @@ dialog {
   justify-content: center;
   align-items: center;
   padding: 15px;
+  position: fixed;
   div.modal-inner {
     width: 100%;
     max-width: 1200px;
     background-color: var(--white);
     border-radius: 7px;
     padding: 15px;
+    position: relative;
     h3 {
       color: var(--text);
       font-weight: 500;
@@ -828,6 +822,31 @@ dialog {
         font-size: 16px;
         line-height: 24px;
       }
+    }
+
+    p.hint-text {
+      color: #e6c700;
+      font-size: 15px;
+    }
+  }
+
+  .close-btn {
+    top: 17px;
+    right: 17px;
+    &:hover {
+      path {
+        fill: var(--text);
+      }
+    }
+  }
+}
+
+.close-btn {
+  cursor: pointer;
+  position: absolute;
+  &:hover {
+    path {
+      fill: var(--white);
     }
   }
 }

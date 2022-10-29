@@ -2273,7 +2273,7 @@ const crafts = [{
         },
         {
           "title": "stores in",
-          "value": "Pantry"
+          "value": "Pantry,Ware House"
         }
       ],
       "keywords": [
