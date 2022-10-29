@@ -81,7 +81,7 @@
   .mainNavigationMobileVersion {
     position: fixed;
     top: 0;
-    right: 0px;
+    right: 0;
     flex-direction: column;
     width: 40%;
     min-width: 250px;
@@ -102,6 +102,19 @@
       right: 25px;
     }
   }
+  .nav-enter-to,
+  .nav-leave-from {
+    right: 0;
+  }
+  .nav-leave-to,
+  .nav-enter-from {
+    right: -300px;
+  }
+  .nav-enter-active,
+  .nav-leave-active {
+    transition: right 0.45s;
+  }
+
   .mainNavMobileToggleBtn {
     background-color: transparent;
     border: 0;

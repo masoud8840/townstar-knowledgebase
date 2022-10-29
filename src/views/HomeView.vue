@@ -10,26 +10,32 @@
         @click="toggleIsNavOpen"
       />
 
-      <ul :class="{ mainNavigationMobileVersion: isMobile }" v-if="isNavOpen">
-        <close-btn class="close-btn" @click="toggleIsNavOpen" v-if="isMobile" />
-        <li>
-          <router-link to="/about">about</router-link>
-        </li>
-        <li>
-          <router-link to="/contact">contact</router-link>
-        </li>
-        <li>
-          <router-link to="/blog">blog</router-link>
-        </li>
-        <li>
-          <router-link to="/tutorials">tutorials</router-link>
-        </li>
-        <li>
-          <router-link to="/build" class="navbar-start-link"
-            >start<img src="/public/images/Navbar/Arrow.svg" alt="arrow" />
-          </router-link>
-        </li>
-      </ul>
+      <transition name="nav">
+        <ul :class="{ mainNavigationMobileVersion: isMobile }" v-if="isNavOpen">
+          <close-btn
+            class="close-btn"
+            @click="toggleIsNavOpen"
+            v-if="isMobile"
+          />
+          <li>
+            <router-link to="/about">about</router-link>
+          </li>
+          <li>
+            <router-link to="/contact">contact</router-link>
+          </li>
+          <li>
+            <router-link to="/blog">blog</router-link>
+          </li>
+          <li>
+            <router-link to="/tutorials">tutorials</router-link>
+          </li>
+          <li>
+            <router-link to="/build" class="navbar-start-link"
+              >start<img src="/public/images/Navbar/Arrow.svg" alt="arrow" />
+            </router-link>
+          </li>
+        </ul>
+      </transition>
     </nav>
     <div
       class="home-view__overlay"
