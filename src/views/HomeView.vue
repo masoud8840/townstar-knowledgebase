@@ -4,7 +4,14 @@
       <router-link to="/">
         <img src="/public/images/Navbar/TownStarLogo.svg" alt="townstar-logo" />
       </router-link>
-      <ul>
+      <menu-btn
+        class="mainNavMobileToggleBtn"
+        v-if="isMobile"
+        @click="toggleIsNavOpen"
+      />
+
+      <ul :class="{ mainNavigationMobileVersion: isMobile }" v-if="isNavOpen">
+        <close-btn class="close-btn" @click="toggleIsNavOpen" v-if="isMobile" />
         <li>
           <router-link to="/about">about</router-link>
         </li>
@@ -24,7 +31,10 @@
         </li>
       </ul>
     </nav>
-    <div class="home-view__overlay">
+    <div
+      class="home-view__overlay"
+      @click="isMobile ? (isNavOpen = false) : ''"
+    >
       <section>
         <h2>Welcome to town star helper</h2>
         <p>
@@ -35,4 +45,46 @@
       </section>
     </div>
   </div>
+
+  <!-- <dialog>
+    <div class="modal-inner">
+      <h3>New Update!</h3>
+      <p>What did updated is listed below:</p>
+      <ul>
+        <li>New Contact Us Page Added.</li>
+        <li>Updated Informations (Oct 29, 2022).</li>
+        <li>Buildings List's Order.</li>
+        <li>Update Popup.</li>
+      </ul>
+      <p></p>
+    </div>
+  </dialog> -->
 </template>
+
+<script setup>
+import { ref, onMounted } from "vue";
+import menuBtn from "../assets/images/Menu.vue";
+import closeBtn from "../assets/images/Close.vue";
+const isMobile = ref(null);
+const isNavOpen = ref(false);
+
+function checkDevice() {
+  if (window.innerWidth < 640) {
+    isMobile.value = true;
+    isNavOpen.value = false;
+  } else {
+    isMobile.value = false;
+    isNavOpen.value = true;
+  }
+  console.log(isMobile.value);
+}
+
+onMounted(() => {
+  window.addEventListener("resize", checkDevice);
+});
+checkDevice();
+
+function toggleIsNavOpen() {
+  isNavOpen.value = !isNavOpen.value;
+}
+</script>
