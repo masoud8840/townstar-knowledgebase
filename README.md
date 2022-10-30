@@ -3,6 +3,7 @@ This app will help you to make better town in Town Star.
 
 ### Run App
 To run the project you have to install nodejs on your machine, [Node.JS](https://www.nodejs.org)
+
 To install project dependencies run this command
 ```
 npm install
