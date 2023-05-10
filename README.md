@@ -13,8 +13,8 @@ To run app on localhost run this command:
 npm run dev
 ```
 
-### Live in here
-[TownStarKnowledgebase](https://townstar-knowledgebase-acb8d.web.app/)
+### UI File
+[Open in Figma](https://www.figma.com/file/hrZkL0IaLNyRaYx4RSYB66/Town-Star-Knowledge-Base?node-id=0%3A1)
 
-### Figma File Here
-[TownStarKnowledgebase](https://www.figma.com/file/hrZkL0IaLNyRaYx4RSYB66/Town-Star-Knowledge-Base?node-id=0%3A1)
+### Live Preview
+[TownStarKnowledgebase](https://townstar-knowledgebase-acb8d.web.app/)
